@@ -1,0 +1,164 @@
+﻿
+@{
+    ViewBag.Title = "FilterResults";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+<div class="container-agoda" style="position: relative;">
+    <div class="ssr-container" style="padding-top:24px;">
+        <div class="row">
+            <div class="hRUYUu col-3">
+                <div data-selenium="staticMapContainer" class="topLeftStaticMapContainer" data-element-name="static-map-container"><div class="staticMapGroup"><a class="showMapBtns staticMapPanel hasTravelersUsingMap" data-selenium="show-map-btn" aria-label="Xem vị trí" href="#"><figure class="staticMapContainer" data-selenium="static-map-container"><div class="tileMapWrapper"><img alt="" class="static-map-paper" src="https://cdn6.agoda.net/images/MAPS-1213/default/bkg-map-entry.svg"><img alt="" class="static-map-pin" src="https://cdn6.agoda.net/images/MAPS-1213/default/img-map-pin-red.svg"></div><figcaption class="captionOverImage" data-selenium="static-map-caption">Xem vị trí</figcaption></figure></a></div></div>
+                <div class="TextSearchContainer TextSearchContainer__Sidebar ShortTextSearchContainer" data-element-name="search-filter-text-search"><div class="Autosuggest__Container"><input type="text" autocomplete="off" role="combobox" aria-autocomplete="list" aria-owns="react-autowhatever-1" aria-expanded="false" aria-haspopup="false" class="Autosuggest__TextEditor form-control" value="" placeholder="Tìm kiếm văn bản"><div id="react-autowhatever-1" class="SuggestionList__Container"></div></div><i class="ficon ficon-search-box ficon-16 TextSearch__Icon"><img src="~/Images/search.png" width="20" height="20" /></i></div>
+                <div id="filter-nav">
+                    <form action="@Url.Action("FilterResults", "SanPham")" method="get">
+                        <div class="fqroEB">
+                            <div class="Box-sc-kv6pi1-0 hRUYUu">
+                                <div class="Box-sc-kv6pi1-0 hRUYUu FilterSeparator"></div>
+                                <div class="filter-menu">
+                                    <span data-component="fliter-label"><span>Bộ lọc phổ biến thế giới di động</span></span>
+                                </div>
+                                <div class="filter-items">
+                                    <ul class="list-filter__items">
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="Box-sc-kv6pi1-0 hRUYUu">
+                                <div class="Box-sc-kv6pi1-0 hRUYUu FilterSeparator"></div>
+                                <div class="filter-menu">
+                                    <span data-component="fliter-label"><span>Hãng Sản Xuất</span></span>
+                                </div>
+                                <div class="filter-items">
+                                    <ul class="list-filter__items">
+
+                                        <li class="filter-item-react dark">
+                                            <span tabindex="0" class="filter-item-info RecommendedByDestinationCity-49499 " data-component="search-filter-paymentoptions" data-element-name="search-filter-paymentoptions" data-element-index="2" data-element-value="49499" data-is-selected="false" data-recommendation_type="31" aria-label="Hủy miễn phí" role="checkbox" aria-checked="false">
+                                                <span>
+                                                    <input type="checkbox" name="Samsung" value="true" aria-labelledby="list-filter-item-label-2">
+                                                    <span class="checkbox-icon" role="checkbox" aria-label="list-filter-item-label-2" aria-checked="false"></span>
+                                                </span>
+                                                <span class="filter-item-body">
+                                                    <span>
+                                                        <span class="filter-item-content" data-selenium="filter-item-text">Samsung</span>
+                                                    </span>
+                                                </span>
+                                            </span>
+                                        </li>
+                                        <li class="filter-item-react dark">
+                                            <span tabindex="0" class="filter-item-info RecommendedByDestinationCity-49499 " data-component="search-filter-paymentoptions" data-element-name="search-filter-paymentoptions" data-element-index="2" data-element-value="49499" data-is-selected="false" data-recommendation_type="31" aria-label="Hủy miễn phí" role="checkbox" aria-checked="false">
+                                                <span>
+                                                    <input type="checkbox" name="Iphone" value="true" aria-labelledby="list-filter-item-label-2">
+                                                    <span class="checkbox-icon" role="checkbox" aria-label="list-filter-item-label-2" aria-checked="false"></span>
+                                                </span>
+                                                <span class="filter-item-body">
+                                                    <span>
+                                                        <span class="filter-item-content" data-selenium="filter-item-text">Iphone</span>
+                                                    </span>
+                                                </span>
+                                            </span>
+                                        </li>
+                                        <li class="filter-item-react dark">
+                                            <span tabindex="0" class="filter-item-info RecommendedByDestinationCity-49499 " data-component="search-filter-paymentoptions" data-element-name="search-filter-paymentoptions" data-element-index="2" data-element-value="49499" data-is-selected="false" data-recommendation_type="31" aria-label="Hủy miễn phí" role="checkbox" aria-checked="false">
+                                                <span>
+                                                    <input type="checkbox" name="Vivo" value="true" aria-labelledby="list-filter-item-label-2">
+                                                    <span class="checkbox-icon" role="checkbox" aria-label="list-filter-item-label-2" aria-checked="false"></span>
+                                                </span>
+                                                <span class="filter-item-body">
+                                                    <span>
+                                                        <span class="filter-item-content" data-selenium="filter-item-text">Vivo</span>
+                                                    </span>
+                                                </span>
+                                            </span>
+                                        </li>
+                                        <li class="filter-item-react dark">
+                                            <span tabindex="0" class="filter-item-info RecommendedByDestinationCity-49499 " data-component="search-filter-paymentoptions" data-element-name="search-filter-paymentoptions" data-element-index="2" data-element-value="49499" data-is-selected="false" data-recommendation_type="31" aria-label="Hủy miễn phí" role="checkbox" aria-checked="false">
+                                                <span>
+                                                    <input type="checkbox" name="Honor" value="true" aria-labelledby="list-filter-item-label-2">
+                                                    <span class="checkbox-icon" role="checkbox" aria-label="list-filter-item-label-2" aria-checked="false"></span>
+                                                </span>
+                                                <span class="filter-item-body">
+                                                    <span>
+                                                        <span class="filter-item-content" data-selenium="filter-item-text">Honor</span>
+                                                    </span>
+                                                </span>
+                                            </span>
+                                        </li>
+                                        <li class="filter-item-react dark">
+                                            <span tabindex="0" class="filter-item-info RecommendedByDestinationCity-49499 " data-component="search-filter-paymentoptions" data-element-name="search-filter-paymentoptions" data-element-index="2" data-element-value="49499" data-is-selected="false" data-recommendation_type="31" aria-label="Hủy miễn phí" role="checkbox" aria-checked="false">
+                                                <span>
+                                                    <input type="checkbox" name="Xiaomi" value="true" aria-labelledby="list-filter-item-label-2">
+                                                    <span class="checkbox-icon" role="checkbox" aria-label="list-filter-item-label-2" aria-checked="false"></span>
+                                                </span>
+                                                <span class="filter-item-body">
+                                                    <span>
+                                                        <span class="filter-item-content" data-selenium="filter-item-text">Xiaomi</span>
+                                                    </span>
+                                                </span>
+                                            </span>
+                                        </li>
+                                        <li class="filter-item-react dark">
+                                            <span tabindex="0" class="filter-item-info RecommendedByDestinationCity-49499 " data-component="search-filter-paymentoptions" data-element-name="search-filter-paymentoptions" data-element-index="2" data-element-value="49499" data-is-selected="false" data-recommendation_type="31" aria-label="Hủy miễn phí" role="checkbox" aria-checked="false">
+                                                <span>
+                                                    <input type="checkbox" name="Oppo" value="true" aria-labelledby="list-filter-item-label-2">
+                                                    <span class="checkbox-icon" role="checkbox" aria-label="list-filter-item-label-2" aria-checked="false"></span>
+                                                </span>
+                                                <span class="filter-item-body">
+                                                    <span>
+                                                        <span class="filter-item-content" data-selenium="filter-item-text">Oppo</span>
+                                                    </span>
+                                                </span>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>      
+                        </div>
+                        <input type="hidden" name="paged" value="1">
+                        <button class="btn text-uppercase btn-xs-mini btn-hover btn-outline-dark btn-block">
+                            <span class="hover-span" style="top: 107.938px; left: 64.5px;"></span><span class="font-weight-bold pr-2">Tìm kiếm</span>
+                            <i class="zmdi zmdi-long-arrow-right font-weight-bold"></i>
+                        </button>
+
+                    </form>
+
+                </div>
+            </div>
+            <div class="col-9">
+                <div class="row same-height-wrap">
+
+                    @foreach (var item in Model)
+                    {              
+                                <div class="col-lg-4 col-6">
+                                    <div class="card same-height-item" offset="787" style="height: 291.125px;">
+                                        <div class="card-img">
+                                            <div class="images images-block shop-img">
+                                                <a href="@Url.Action("Details","SanPham",new {id = item.MaSP})">
+                                                    <img class="img-fluid" src="~/Images/@item.HinhMinhHoa" alt="Ảnh">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <hr class="card-division">
+                                        <div class="card-body text-center">
+                                            <h2 class="card-title same-height-item" offset="957" style="height: 26px;"><a href="#" style="text-decoration:none;color:black;font-weight:bold;font-size:16px">@item.TenSP </a></h2>
+                                            <p class="card-meta">
+                                                <strong><i class="zmdi zmdi-pin"></i></strong>
+                                                <span class="frzEdX" style="font-weight: bold ; text-transform: uppercase ">
+                                                    $@string.Format("{0:0.00}", @item.DonGia)
+                                                </span>                                   
+                                            </p>
+                                            <p class="card-meta">
+                                                <strong>
+                                                    <span class="cpu" style="font-weight: bold; font-size:15px">@item.CPU</span>
+                                                </strong>
+                                            </p>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

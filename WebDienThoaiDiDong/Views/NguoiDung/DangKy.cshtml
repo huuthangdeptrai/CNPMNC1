@@ -1,0 +1,201 @@
+﻿
+@{
+    ViewBag.Title = "DangKy";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<div class="promotion-block__inner">
+    <div class="container">
+        <div class="promotion-inner">
+            <div class="promotion-slide">
+                <div class="container">
+                    <div class="promotion-slide__inner">
+
+                        <div class="mmb-login-form-panel mmb-panel-form-gap">
+                            <div class="fgtuA-D">
+                                <div class="mXdik">
+                                    <div data-cy="signup-panel-title" class="sc-AxgMl drXva">
+                                        <h3 class="sc-fznBMq fbXRDK kite-js-Typography ">Đăng Ký</h3>
+                                        <span class="quang">Tạo một tài khoản để theo dõi đơn hàng của bạn, tạo danh sách mong muốn và hơn thế nữa</span>
+                                    </div>
+                                    <div class="iWplGZ">
+                                        <div class="jtMJCi">
+                                            <div class="jIcqRC">
+
+                                                @using (Html.BeginForm("DangKy", "NguoiDung"))
+                                                {
+                                                    <div class="iIozRy">
+                                                        @Html.ValidationSummary(true)
+
+                                                        <div class="jIcqRC">
+                                                            <div class="daSMuo">
+                                                                <span class="dzZFTs">
+                                                                    Tên
+                                                                </span>
+                                                            </div>
+                                                            <div class="ifEknM">
+                                                                @Html.TextBox("TenKH", null, new
+                                                        {
+                                                            @class = "iksYDU jJAzoG",
+                                                            placeholder = "Tên",
+
+                                                                    @id = "name",
+                                                            required = "required"
+                                                        })
+                                                            </div>
+
+                                                        </div>
+
+                                                        <div class="jIcqRC">
+                                                            <div class="daSMuo">
+                                                                <span class="dzZFTs">
+                                                                    Họ
+                                                                </span>
+                                                            </div>
+                                                            <div class="ifEknM">
+                                                                @Html.TextBox("HoKH", null, new
+                                                        {
+                                                            @class = "iksYDU jJAzoG",
+                                                            placeholder = "Họ",
+
+                                                            @id = "name",
+                                                            required = "required"
+                                                        })
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="jIcqRC">
+                                                            <div class="daSMuo">
+                                                                <span class="dzZFTs">
+                                                                    Email
+                                                                </span>
+                                                            </div>
+                                                            <div class="ifEknM">
+                                                                @Html.TextBox("Email", null, new
+                                                        {
+                                                            @class = "iksYDU jJAzoG",
+                                                            placeholder = "Email",
+
+                                                            @id = "name",
+                                                            required = "required"
+                                                        })
+                                                            </div>
+
+                                                        </div>
+
+                                                        <div class="jIcqRC">
+                                                            <div class="daSMuo">
+                                                                <span class="dzZFTs">
+                                                                    Mật khẩu
+                                                                </span>
+                                                            </div>
+                                                            <div class="ifEknM">
+                                                                @Html.Password("Matkhau", null, new
+                                                        {
+                                                            @class = "iksYDU jJAzoG",
+                                                            placeholder = "Mật khẩu",
+
+                                                            @id = "name",
+                                                            required = "required"
+                                                        })
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="jIcqRC">
+                                                            <div class="daSMuo">
+                                                                <span class="dzZFTs">
+                                                                    Xác nhận mật khẩu
+                                                                </span>
+                                                            </div>
+                                                            <div class="ifEknM">
+                                                                @Html.Password("Xacnhanmatkhau", null, new
+                                                        {
+                                                            @class = "iksYDU jJAzoG",
+                                                            placeholder = "Xác nhận mật khẩu",
+
+                                                            @id = "name",
+                                                            required = "required"
+                                                        })
+                                                            </div>
+
+                                                        </div>
+
+                                                        @if (TempData["ErrorMessage"] != null)
+                                                        {
+                                                            <div style="font-size:14px;color:red;font-weight:600;">
+                                                                @TempData["ErrorMessage"]
+                                                            </div>
+                                                        }
+                                                        <div class="jIcqRC">
+                                                            <button type="submit" class="dmnfeu">
+                                                                <div class="jkvegZ">
+                                                                    <div class="gfGIVK">
+                                                                        <div class="dAxUxB">
+                                                                            Đăng ký
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </button>
+                                                        </div>
+
+                                                    </div>
+                                                }
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="bsJrQz">
+                                        <div class="sc-fzoyTs eMdnSA"></div>
+                                        <div class="sc-AxgMl hDVyIJ"><span class="sc-fznZeY dzZFTs">hoặc tiếp tục với</span></div>
+                                        <div class="sc-fzoyTs eMdnSA"></div>
+                                    </div>
+                                    <div class="drXva">
+                                        <div class="gfGIVK">
+                                            <div class="joSgZT">
+                                                <div class="jIcqRC">
+                                                    <div class="ejSjga">
+                                                        <div class="sc-AxhCb jIcqRC">
+                                                            <button class="kiFFiN bGmNDF">
+                                                                <div class="jkvegZ">
+                                                                    <div class="bdPxIn">
+                                                                        <img src="https://cdn6.agoda.net/images/universal-login/google-logo-v2.svg" width="22px" height="22px" style="">
+                                                                    </div>
+                                                                    <div class="gfGIVK">
+                                                                        <span class="dAxUxB">Google</span>
+                                                                    </div>
+                                                                </div>
+                                                            </button>
+                                                        </div>
+                                                        <div class="sc-AxhCb kEkzhC"><button data-element-name="universal-login-facebook-button" data-cy="facebook-button" radius="S" class="sc-fzqARJ kiFFiN sc-oUcyK bGmNDF" color="primary"><div class="sc-fzoiQi jkvegZ"><div class="sc-AxgMl bdPxIn"><img src="https://cdn6.agoda.net/images/universal-login/facebook-logo.svg" width="22px" height="22px" style=""></div><div class="sc-AxgMl gfGIVK"><span class="sc-fznZeY dAxUxB">Facebook</span></div></div></button></div>
+                                                        <div class="sc-AxhCb kEkzhC"><button data-element-name="universal-login-apple-button" data-cy="apple-button" sizes="XL" radius="S" class="sc-fzqARJ kiFFiN sc-oUcyK bGmNDF" color="primary"><div class="sc-fzoiQi jkvegZ"><div class="sc-AxgMl bdPxIn"><img src="https://cdn6.agoda.net/images/universal-login/apple-logo.svg" width="22px" height="22px" style=""></div><div class="sc-AxgMl gfGIVK"><span class="sc-fznZeY dAxUxB">Apple</span></div></div></button></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="bsJrQz">
+                                        <div class="sc-fzoyTs eMdnSA"></div>
+                                    </div>
+                                    <div class="sc-AxgMl kjPvwT">
+                                        <a href="~/NguoiDung/DangNhap">
+                                            <button color="primary" class="sc-fzqARJ kiFFiN">
+                                                <div class="sc-fzoiQi jkvegZ">
+                                                    <div class="sc-AxgMl gfGIVK">
+                                                        <span class="sc-fznZeY dAxUxB">Bạn đã có tài khoản? Đăng nhập</span>
+                                                    </div>
+                                                </div>
+                                            </button>
+                                        </a>
+                                    </div>
+                                    <div class="sc-AxgMl bFGaPh"><span data-cy="terms-policy" class="sc-fznZeY caqilX"><span>Khi đăng nhập, tôi đồng ý với các Điều khoản sử dụng và Chính sách bảo mật của SalePhone.</span></span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+

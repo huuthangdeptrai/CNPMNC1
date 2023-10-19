@@ -1,0 +1,64 @@
+﻿@model WebDienThoaiDiDong.Models.FEEDBACK
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+<div class="promotion-block__inner">
+    <div class="container">
+        <div class="promotion-inner">
+            <div class="promotion-slide">
+                <div class="container">
+                    <div class="promotion-slide__inner">
+
+                        <div class="container" style=" width: 440px; padding: 2.5rem; top: 30px; left: 50%; border: 1px solid #000; ">
+                            <img src="~/Images/logoMall.png" />
+                            <h2 class="AuthLayout_formTitle__2S9Up" style="font-size: 2.3rem; font-weight: 700; margin: 0.25rem 0;text-align:center">Form đánh giá</h2>
+                            <div class="container" style=" width: 100%; margin: 1rem 0 0;">
+                                @using (Html.BeginForm())
+                                {
+                                    @Html.AntiForgeryToken()
+
+                                    <div class="form-horizontal">
+                                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                        <div class="form-group">
+                                            Chủ đề đánh giá (Tuyệt vời , Tệ ,...)
+                                            <div class="col-md-10">
+                                                @Html.EditorFor(model => model.ChuDeFB, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.ChuDeFB, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            Nội dung đánh giá
+                                            <div class="col-md-10">
+                                                @Html.EditorFor(model => model.ThongtinFB, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.ThongtinFB, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            Mã Chủ đề
+                                            <div class="col-md-10">
+                                                @Html.DropDownList("MaSP", null, htmlAttributes: new { @class = "form-control" })
+                                                @Html.ValidationMessageFor(model => model.MaSP, "", new { @class = "text-danger", required = "required", @readonly = "readonly" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-md-offset-2 col-md-10">
+                                                <input type="submit" value="Create" class="btn btn-danger" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                                <div style="font-size:16px;">
+                                    @Html.ActionLink("Trở lại", "MatBang")
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+

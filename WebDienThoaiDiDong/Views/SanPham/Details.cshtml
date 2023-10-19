@@ -1,0 +1,204 @@
+﻿@using WebDienThoaiDiDong.Models
+@model SANPHAM
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+<h2 class="hoang-phuc-name-acc">THÔNG TIN CHI TIẾT SẢN PHẨM</h2>
+<section class="product-details">
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-6">
+                <img style="width: 100%;" src="~/Images/@Model.HinhMinhHoa" alt="">
+                <h3 class="thongtinaccs-title">
+                    @Model.TenSP
+                </h3>
+            </div>
+            <div class="col-md-6">
+                <h2 style="font-size: 24px; font-weight: bold; color: #D83F31; text-align: center">@Model.TenSP</h2>
+                <p style="text-align: justify;font-size: 17px">
+                    <span style="font-weight: bold; font-size: 22px; text-transform: capitalize;">Thông tin sản phẩm : </span> @Model.MoTa
+                </p>
+                <div class="gicungdcs">
+                    <hr />
+                    <div class="thongtinaccs-meta-home">
+                        <span class="thongtinacc-rank-home">
+                            <label>Camera Trước : </label>
+                            @Model.CameraTruoc
+                        </span>
+                        <span class="thongtinacc-tuong-home">
+                            <label>Camera Sau :</label>
+                            @Model.CameraSau
+                        </span>
+                        <br>
+                        <span class="thongtinacc-trang_phuc-home">
+                            <label>RAM :</label>
+                            @Model.RAM
+                        </span>
+                        <span class="thongtinacc-ngoc-home">
+                            <label>CPU : </label>
+                            @Model.CPU
+                        </span>
+                        <span class="thongtinacc-trang_phuc-home">
+                            <label>Dung Lượng :</label>
+                            @Model.DungLuong
+                        </span>
+                        <span class="thongtinacc-ngoc-home">
+                            <label>Màn Hình : </label>
+                            @Model.ManHinh
+                        </span>
+                        <span class="thongtinacc-trang_phuc-home">
+                            <label>Đánh giá :</label>
+                            @Model.DanhGia
+                        </span>
+                        <span class="thongtinacc-ngoc-home">
+                            <label>Điểm Thưởng : </label>
+                            @Model.DiemThuong
+                        </span>
+                    </div>
+                    <hr />
+
+
+                </div>
+                <p class="thongtinacc-price">
+                    <span style="color: #000; font-weight: bold; text-transform: capitalize; font-size: x-large;">Giá Sản Phẩm: </span><span style="color: #D83F31; font-size: 30px; font-weight: bold; text-transform: uppercase; margin-left: 10px;">$@string.Format("{0:0.00}", @Model.DonGia)</span>
+                </p>
+
+            </div>
+        </div>
+        <hr />
+        <br />
+        <div class="" style="margin-top:8px;">
+            <div class="dzbfhz">
+                @foreach (var item in Model.LOAISANPHAMs)
+                {<div class="eNMLhH">
+                        <a href="#" class="hbfbVb">
+                            <div class="ksUrsk">
+                                <div class="dAzOrK">
+                                    <div class="bsEaOG">
+                                        <img alt="" src="~/Images/@item.HinhMinhHoa" width="60%" height="200px" class="FeaturedPropertyCard__Image">
+                                    </div>
+
+                                </div>
+                                <div class="dAzOrK">
+                                    <span class="PhACE">@item.TenSP</span>
+                                </div>
+                                <div class="dAzOrK">
+                                    <div class="ksUrsk">
+                                        <div class="bqFAqd">
+                                            <span><i class="ficon">@item.XepHangSao ⭐ </i></span>
+                                        </div>
+                                        <div class="bqFAqd">
+                                            <img src="~/Images/color.png" alt="" width="14" height="14" style="border-radius: 2px; margin: 4px">
+                                        </div>
+                                        <div class="bqFAqd">
+                                            <span class="gkdqhz"><i>@item.MauSac</i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dAzOrK">
+                                    <span class="cUindZ">Giá chỉ từ</span>
+                                </div>
+                                <div class="dAzOrK">
+                                    <div class="ksUrsk">
+                                        <div class="bqFAqd">
+                                            <span class="frzEdX">
+                                                $
+                                            </span>
+                                        </div>
+                                        <div class="bqFAqd">
+                                            <span class="frzEdX" style="font-weight: bold ; text-transform: uppercase ">
+                                                @string.Format("{0:0.00}", @item.DonGia)
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <a href="@Url.Action("ThemSanPhamVaoGio" , "GioHang",new {Malsp = item.MaLSP,Masp = item.MaSP })" class="dume">
+                        <div class="iviVGh">
+                            <button aria-label="Add to cart " role="button" data-element-name="add-to-cart" data-component="AddToCartButton" color="primary" class="ButtonstyledButtonStyled-sc-5gjk6l-0 ekKZuv">
+                                <div class="BaseButtonstyledHiddenToggler-sc-12j2fzo-2 fMuMFt">
+                                    <div class="Box-sc-kv6pi1-0 hRUYUu">Thêm vào xe đẩy hàng</div>
+                                </div>
+                            </button>
+                        </div>
+                    </a>
+                }
+            </div>
+        </div>
+        <hr />
+    </div>
+</section>
+<div class="container-agoda">
+    <a href="~/SanPham/Create">
+        Thêm đánh giá <i class="icon-down-arrow" role="button" data-toggles="collapse" href="#sub-menu-3567" aria-expanded="false" aria-controls="sub-menu-11"></i>
+    </a>
+</div>
+<div class="container-agoda" id="reviewSection" data-element-name="review-section" data-provider-id="0">
+    <div id="customer-reviews-panel" class="ReviewHeader scrollTo MIN-22586">
+        <div class="ReviewHeader__Hotel">
+            <div class="ReviewHeader__HotelName">
+                <h2>Bài đánh giá từ khách thật</h2>
+                <div class="Review-tooltipContainer" tabindex="0" aria-describedby="rc-tooltip-807"><i class="ficon ficon-18 ficon-info-with-circle Review-headerButton"></i></div>
+            </div>
+            <div class="ReviewHeader__Providers">
+                <div class="ReviewsProvider__Provided ReviewsProvider__Provided--header ReviewHeader__ProvidersLogo">
+                    <span class="ReviewsProvider__LogoText">Đánh giá từ khách hàng đã xác thực trên</span>
+                    <div class="ReviewsAllProvider"><span class="ReviewsProvider__ProvidedByMultipleProvider"><img alt="" src="https://cdn6.agoda.net/images/default/agoda-logo-review.png"></span><span class="ReviewsProvider__ProvidedByMultipleProvider"><img alt="" src="https://cdn6.agoda.net/images/default/b-com-logo.png"></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="Review-paginator Review-paginator--withSteps " data-location="top">
+        <div class="Review-paginator-steps"><span role="link" tabindex="0" aria-label="Trang đánh giá trước" aria-disabled="true" class="Review-paginator-arrow Review-paginator-arrow--inactive"><i class="ficon ficon-24 ficon-carrouselarrow-left" tabindex="0"></i></span><span class="Review-paginator-numbers" role="navigation" aria-label="Phân trang đánh giá"><span class="Typographystyled__TypographyStyled-sc-j18mtu-0 croywR kite-js-Typography Review-paginator-number Review-paginator-number--current" role="link" tabindex="0" text-decoration="none" aria-label="Trang đánh giá 1" aria-current="page" style="cursor: default;">1</span><span class="Typographystyled__TypographyStyled-sc-j18mtu-0 cfuHGb kite-js-Typography Review-paginator-number " role="link" tabindex="0" text-decoration="underline" aria-label="Trang đánh giá 2" aria-current="false" style="cursor: pointer;">2</span><span class="Typographystyled__TypographyStyled-sc-j18mtu-0 cfuHGb kite-js-Typography Review-paginator-number " role="link" tabindex="0" text-decoration="underline" aria-label="Trang đánh giá 3" aria-current="false" style="cursor: pointer;">3</span><span class="Typographystyled__TypographyStyled-sc-j18mtu-0 cfuHGb kite-js-Typography Review-paginator-number " role="link" tabindex="0" text-decoration="underline" aria-label="Trang đánh giá 4" aria-current="false" style="cursor: pointer;">4</span><span class="Typographystyled__TypographyStyled-sc-j18mtu-0 cfuHGb kite-js-Typography Review-paginator-number " role="link" tabindex="0" text-decoration="underline" aria-label="Trang đánh giá 5" aria-current="false" style="cursor: pointer;">5</span></span><span role="link" tabindex="0" aria-label="Trang đánh giá kế tiếp" aria-disabled="false" class="Review-paginator-arrow "><i class="ficon ficon-24 ficon-carrouselarrow-right" tabindex="0"></i></span></div>
+    </div>
+    <div class="Review-comments" id="reviewSectionComments" data-provider-id="332" data-element-name="review-comments">
+        @foreach (var feedback in Model.FEEDBACKs)
+        {
+            <div class="Review-comment" id="review-0">
+                <div class="Review-comment-left">
+                    <div>
+                        <div class="Review-comment-leftHeader">
+                            <div class="Review-comment-leftScore">@feedback.MaSP.0</div>
+                            <div class="Review-comment-leftScoreText">Trên cả tuyệt vời</div>
+                        </div>
+                        <div class="Review-comment-reviewer" data-info-type="reviewer-name"><i class="flag flag-16 flag-16-vn"><img src="~/Images/covn.png" width="16" height="16" style="margin-bottom:18px;" /></i><strong>@feedback.TenKH</strong><span> từ </span><span>Việt Nam</span></div>
+                        <div class="Review-comment-reviewer" data-info-type="group-name"><i class="ficon ficon-14 ficon-luggage"><img src="~/Images/user.png" width="14" height="14" /></i><span>Nhóm</span></div>
+                        <div class="Review-comment-reviewer" data-info-type="room-type"><i class="ficon ficon-14 ficon-map-room"><img src="~/Images/bed.icon.png" width="14" height="14" /></i><span>@feedback.TenSP</span></div>
+                        <div class="Review-comment-reviewer" data-info-type="stay-detail"><i class="ficon ficon-14 ficon-length-of-stay"><img src="~/Images/calendar.png" width="14" height="14" /></i><span>Đã ở 1 đêm tại @feedback.TenSP </span></div>
+                    </div>
+                </div>
+                <div class="Review-comment-right">
+                    <div class="Review-comment-bubble">
+                        <div class="Review-comment-body" data-selenium="">
+                            <h3 class="Review-comment-bodyTitle">@feedback.ChuDeFB”</h3>
+                            <p class="Review-comment-bodyText" data-type="comment" data-selenium="comment">@feedback.ThongtinFB</p>
+                        </div>
+                        <div class="Review-statusBar">
+                            <div class="Review-statusBar-left">
+                                <div class="Review-statusBar-DateContainer"><span class="Review-statusBar-date ">Đã nhận xét vào @feedback.Ngaydanhgia </span></div>
+                            </div>
+                        </div>
+                        <div class="Box-sc-kv6pi1-0 fjBxmu">
+                            <div data-element-name="review-comment-see-room-cta" data-review-id="720016126" data-provider-id="332" class="Box-sc-kv6pi1-0 gQKhbE" style="cursor: pointer;">
+                                <p class="Typographystyled__TypographyStyled-sc-j18mtu-0 Hkrzy kite-js-Typography ">Xem ưu đãi phòng</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="Review-comment-helpful-logo" data-element-name="review-comment-helpful" data-review-id="720016126" data-provider-id="332">
+                        <div class="Review-comment-helpful"><span class="Review-comment-helpful-text">Bạn thấy nhận xét này có hữu ích không?</span><span><button class="Review-comment-helpful-button" data-selenium="helpful-yes" data-type="yes" type="button">Có</button><span class="Review-comment-helpful-seperator">|</span><button class="Review-comment-helpful-button" data-selenium="helpful-no" data-type="no" type="button">Không</button></span></div>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+    <div class="Review-paginator Review-paginator--withSteps " data-location="bottom">
+        <div class="Review-paginator-steps"><span role="link" tabindex="0" aria-label="Trang đánh giá trước" aria-disabled="true" class="Review-paginator-arrow Review-paginator-arrow--inactive"><i class="ficon ficon-24 ficon-carrouselarrow-left" tabindex="0"></i></span><span class="Review-paginator-numbers" role="navigation" aria-label="Phân trang đánh giá"><span class="Typographystyled__TypographyStyled-sc-j18mtu-0 croywR kite-js-Typography Review-paginator-number Review-paginator-number--current" role="link" tabindex="0" text-decoration="none" aria-label="Trang đánh giá 1" aria-current="page" style="cursor: default;">1</span><span class="Typographystyled__TypographyStyled-sc-j18mtu-0 cfuHGb kite-js-Typography Review-paginator-number " role="link" tabindex="0" text-decoration="underline" aria-label="Trang đánh giá 2" aria-current="false" style="cursor: pointer;">2</span><span class="Typographystyled__TypographyStyled-sc-j18mtu-0 cfuHGb kite-js-Typography Review-paginator-number " role="link" tabindex="0" text-decoration="underline" aria-label="Trang đánh giá 3" aria-current="false" style="cursor: pointer;">3</span><span class="Typographystyled__TypographyStyled-sc-j18mtu-0 cfuHGb kite-js-Typography Review-paginator-number " role="link" tabindex="0" text-decoration="underline" aria-label="Trang đánh giá 4" aria-current="false" style="cursor: pointer;">4</span><span class="Typographystyled__TypographyStyled-sc-j18mtu-0 cfuHGb kite-js-Typography Review-paginator-number " role="link" tabindex="0" text-decoration="underline" aria-label="Trang đánh giá 5" aria-current="false" style="cursor: pointer;">5</span></span><span role="link" tabindex="0" aria-label="Trang đánh giá kế tiếp" aria-disabled="false" class="Review-paginator-arrow "><i class="ficon ficon-24 ficon-carrouselarrow-right" tabindex="0"></i></span></div>
+    </div>
+</div>

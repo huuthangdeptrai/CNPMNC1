@@ -1,0 +1,466 @@
+﻿@using WebDienThoaiDiDong.Models
+@model IEnumerable<MatHangMua>
+@{
+    ViewBag.Title = "DatHang";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+    KHACHHANG khach = Session["TaiKhoan"] as KHACHHANG;
+}
+
+<div spacing="L" class="Gridstyled__GridStyled-sc-dfh2k0-0 cuMWti sc-prrfo hDTGRI">
+    <div class="Itemstyled__Item-sc-12uga7p-0 sc-qYGWS kZfEJZ">
+
+
+
+        <div data-component="contactDetails" class="Box-sc-kv6pi1-0 ewabhv sc-pZBmh sc-paXsP ikurFE">
+            <div spacing="L" class="Gridstyled__GridStyled-sc-dfh2k0-0 bNYnEF sc-qQmou bViFbQ">
+                <div class="Itemstyled__Item-sc-12uga7p-0 bSMgnS">
+                    <p class="Paragraphstyled__ParagraphStyled-sc-180znkb-0 bqqBNR kite-js-Paragraph ">Chi tiết liên lạc</p>
+                </div>
+                <div class="Itemstyled__Item-sc-12uga7p-0 bSMgnS">
+                    <p class="Paragraphstyled__ParagraphStyled-sc-180znkb-0 dxzjpM kite-js-Paragraph ">Xác nhận của quý khách sẽ được gửi đến đây</p>
+                </div>
+                <div class="Itemstyled__Item-sc-12uga7p-0 bSMgnS">
+                    <div spacing="S" class="Gridstyled__GridStyled-sc-dfh2k0-0 byKdDe">
+                        <div class="Itemstyled__Item-sc-12uga7p-0 licRzS">
+                            <div class="FormGroupstyled__FormGroupStyled-sc-16gndvn-0 iSafXp">
+                                <label for="contact.contactFirstName" class="Labelstyled__LabelStyled-sc-cj4uls-0 cjmpmM">Tên</label>
+                                <input class="Inputstyled__StyledInput-sc-mcn0ij-0 edDQUd kite-js-Input sc-qYiqT gHAaoQ" id="contact.contactFirstName" name="contact.contactFirstName" type="text" placeholder="Tên" data-component="pacContactFirstName" autocomplete="given-name" value="@khach.TenKH">
+                            </div>
+                        </div>
+                        <div class="Itemstyled__Item-sc-12uga7p-0 licRzS">
+                            <div class="FormGroupstyled__FormGroupStyled-sc-16gndvn-0 iSafXp">
+                                <label for="contact.contactLastName" class="Labelstyled__LabelStyled-sc-cj4uls-0 cjmpmM">Họ (vd: Nguyễn)</label>
+                                <input class="Inputstyled__StyledInput-sc-mcn0ij-0 edDQUd kite-js-Input sc-qYiqT gHAaoQ" id="contact.contactLastName" name="contact.contactLastName" type="text" placeholder="Họ (vd: Nguyễn)" data-component="pacContactLastName" autocomplete="family-name" value="@khach.HoKH">
+                            </div>
+                        </div>
+                        <div class="Itemstyled__Item-sc-12uga7p-0 licRzS">
+                            <div class="FormGroupstyled__FormGroupStyled-sc-16gndvn-0 iSafXp">
+                                <label for="contact.email" class="Labelstyled__LabelStyled-sc-cj4uls-0 cjmpmM">Email ID</label>
+                                <input class="Inputstyled__StyledInput-sc-mcn0ij-0 edDQUd kite-js-Input sc-qYiqT gHAaoQ" id="contact.email" name="contact.email" type="email" placeholder="Email ID" data-component="pacContactEmail" autocomplete="email" value="@khach.Email">
+                            </div>
+                        </div>
+
+                        <div class="Itemstyled__Item-sc-12uga7p-0 licRzS">
+                            <div class="FormGroupstyled__FormGroupStyled-sc-16gndvn-0 iSafXp"><label for="contact.nationalNumber" class="Labelstyled__LabelStyled-sc-cj4uls-0 cjmpmM">Số di động</label><input class="Inputstyled__StyledInput-sc-mcn0ij-0 edDQUd kite-js-Input sc-qYiqT gHAaoQ" id="contact.nationalNumber" name="contact.nationalNumber" type="text" placeholder="Số di động" data-component="pacContactNationNumber" autocomplete="tel-national" value="" title="Vui lòng nhập số điện thoại"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Itemstyled__Item-sc-12uga7p-0 bSMgnS"></div>
+            </div>
+        </div>
+        <div class="Box-sc-kv6pi1-0 ewabhv sc-pZBmh sc-paXsP ikurFE">
+            <div spacing="L" class="Gridstyled__GridStyled-sc-dfh2k0-0 bNYnEF sc-qQmou bViFbQ">
+                <div class="Itemstyled__Item-sc-12uga7p-0 bSMgnS">
+                    <p class="Paragraphstyled__ParagraphStyled-sc-180znkb-0 bqqBNR kite-js-Paragraph " data-component="bookForSomeoneElseTitle-header">Thông tin khách hàng</p>
+                </div>
+                <div class="Itemstyled__Item-sc-12uga7p-0 bSMgnS">
+                    <div class="Dividerstyled__DividerStyled-sc-1fq3j2e-0 biTLdI">
+                        <div class="Dividerstyled__Sideline-sc-1fq3j2e-1 bypvzB"></div>
+                    </div>
+                </div>
+                <div class="Itemstyled__Item-sc-12uga7p-0 bSMgnS">
+                    <div spacing="L" class="Gridstyled__GridStyled-sc-dfh2k0-0 bNYnEF">
+                        <div class="Itemstyled__Item-sc-12uga7p-0 licRzS">
+                            <div class="FormGroupstyled__FormGroupStyled-sc-16gndvn-0 iSafXp">
+                                <label for="contact.bookForSomeoneElse.guestFirstName" class="Labelstyled__LabelStyled-sc-cj4uls-0 cjmpmM">Tên</label>
+                                <input class="Inputstyled__StyledInput-sc-mcn0ij-0 edDQUd kite-js-Input sc-qYiqT gHAaoQ" id="contact.bookForSomeoneElse.guestFirstName" name="contact.bookForSomeoneElse.guestFirstName" type="text" placeholder="Tên" data-component="pacContactGuestFirstName" autocomplete="given-name" value="@khach.TenKH">
+                            </div>
+                        </div>
+                        <div class="Itemstyled__Item-sc-12uga7p-0 licRzS">
+                            <div class="FormGroupstyled__FormGroupStyled-sc-16gndvn-0 iSafXp">
+                                <label for="contact.bookForSomeoneElse.guestLastName" class="Labelstyled__LabelStyled-sc-cj4uls-0 cjmpmM">Họ (vd: Nguyễn)</label>
+                                <input class="Inputstyled__StyledInput-sc-mcn0ij-0 edDQUd kite-js-Input sc-qYiqT gHAaoQ" id="contact.bookForSomeoneElse.guestLastName" name="contact.bookForSomeoneElse.guestLastName" type="text" placeholder="Họ (vd: Nguyễn)" data-component="pacContactGuestLastName" autocomplete="family-name" value="@khach.HoKH">
+                            </div>
+                        </div>
+
+                        <div class="Itemstyled__Item-sc-12uga7p-0 bSMgnS">
+                            <div class="Itemstyled__Item-sc-12uga7p-0 bSMgnS"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Box-sc-kv6pi1-0 bLDsgz sc-psRme fOKqHM">
+            <section>
+                <div class="Box-sc-kv6pi1-0 hKOkJL">
+                    <div data-component="mob-flight-paymentCard-wrapper" class="sc-pIvhh fKMvyl">
+                        <div class="sc-qPjXN gLJuRh">
+                            <svg width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="SvgIconstyled__SvgIconStyled-sc-1i6f60b-0 gOdBbk Box-sc-kv6pi1-0 lhrYUQ">
+                                <path d="M2.491 16.534C1.073 13.051.671 8.823 1.266 3.855a2 2 0 0 1 1.508-1.704l8.5-2.093a2 2 0 0 1 .954 0l8.551 2.094a2 2 0 0 1 1.509 1.696c.617 4.966.227 9.196-1.188 12.685-1.501 3.7-4.464 6.158-8.8 7.333a2 2 0 0 1-1.052-.001c-4.303-1.18-7.252-3.637-8.757-7.331zm7.452-6.992v-.878c0-.935.758-1.694 1.694-1.694h.583c.936 0 1.694.759 1.694 1.694v.878H9.943zm5.971.338V8.664A3.694 3.694 0 0 0 12.22 4.97h-.583a3.694 3.694 0 0 0-3.694 3.694v1.07A2 2 0 0 0 6.8 11.542v4.357a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-4.357c0-.692-.352-1.302-.886-1.662zM8.8 11.542h6v4.357h-6v-4.357zm3 2.428a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"></path>
+                            </svg>
+                            <span class="Spanstyled__SpanStyled-sc-16tp9kb-0 lfpNCX kite-js-Span sc-qXgLg kKFcHj" data-component="mob-flight-payment-header">Thanh toán an toàn</span>
+                        </div>
+                        <span class="Spanstyled__SpanStyled-sc-16tp9kb-0 lfpNCX kite-js-Span sc-pzXPE lhhXeF" data-component="mob-flight-payment-subHeader">Tất cả thông tin thẻ đều được mã hóa hoàn toàn, an toàn và được bảo vệ.</span>
+                    </div>
+                </div>
+                <div>
+                    <div data-component="CreditCardSecureIFrame" class="sc-pQQXS bfgIyY">
+                        <div id="cc-form">
+                            <div>
+
+
+                                @using (Html.BeginForm("TheTinDung", "NguoiDung"))
+                                {
+                                    @Html.ValidationSummary(true)
+                                    <div class="Box-sc-kv6pi1-0 ksrQLL">
+                                        <div data-element="accordion-container" class="Box-sc-kv6pi1-0 gJpSWf" style="border-color: rgb(83, 146, 249);">
+                                            <div data-element="accordion-radio-container" data-index="998,0" class="Box-sc-kv6pi1-0 bISpXW" style="cursor: pointer;">
+                                                <div class="Box-sc-kv6pi1-0 hBjUBT">
+                                                    <h1 class="sc-fzoLsD sc-fzpans ijCzcl">
+                                                        <div class="Box-sc-kv6pi1-0 jCwCbQ">
+                                                            <div class="Box-sc-kv6pi1-0 hsosKQ"><span class="Spanstyled__SpanStyled-sc-16tp9kb-0 dEdMYi kite-js-Span ">THẺ TÍN DỤNG/GHI NỢ</span></div>
+                                                            <div class="Box-sc-kv6pi1-0 jEyiBE">
+                                                                <ul data-component="CreditDebitCard-available-payment-methods" class="sc-fzoPby jCmeMH">
+                                                                    <li class="sc-fzoCCn lewZOv"><img src="https://cdn6.agoda.net/images/mvc/default/ic_visa@2x_v3.png" alt="Visa" data-component="card-1" class="sc-fznYue kuXQok"></li>
+                                                                    <li class="sc-fzoCCn lewZOv"><img src="https://cdn6.agoda.net/images/mvc/default/ic_master.png" alt="MasterCard" data-component="card-2" class="sc-fznYue kuXQok"></li>
+                                                                    <li class="sc-fzoCCn lewZOv"><img src="https://cdn6.agoda.net/images/mvc/default/ic_americanexpress.png" alt="American Express" data-component="card-4" class="sc-fznYue kuXQok"></li>
+                                                                    <li class="sc-fzoCCn lewZOv"><img src="https://cdn6.agoda.net/images/mvc/default/ic_jcb.png" alt="JCB" data-component="card-3" class="sc-fznYue kuXQok"></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </h1>
+                                                </div>
+                                            </div>
+                                            <div class="sc-fznLPX fYbGWE">
+                                                <div class="Box-sc-kv6pi1-0 ptZSf">
+                                                    <span class="Spanstyled__SpanStyled-sc-16tp9kb-0 lfpNCX kite-js-Span ">Hình thức thanh toán<span class="Spanstyled__SpanStyled-sc-16tp9kb-0 eroyZE kite-js-Span "> *</span></span>
+                                                    <div class="Box-sc-kv6pi1-0 jonMgM">
+                                                        <div class="Gridstyled__GridStyled-sc-dfh2k0-0 RSZHE">
+                                                            <div class="Itemstyled__Item-sc-12uga7p-0 bjESot">
+                                                                <div data-component="selected-payment-dropdown" class="Box-sc-kv6pi1-0 jEyiBE">
+                                                                    <div aria-label="Hình thức thanh toán" class="Box-sc-kv6pi1-0 kZUMyf">
+                                                                        <div tabindex="0" class="Box-sc-kv6pi1-0 Selectstyled__SelectHeader-sc-1vfjv54-0 doiZyA Box-sc-kv6pi1-0 iSZIoo">
+                                                                            <div class="Box-sc-kv6pi1-0 cjeKVM">
+                                                                                <div class="Box-sc-kv6pi1-0 eZqBDe">
+                                                                                    <div class="Box-sc-kv6pi1-0 sc-pbIaG buGBcj"><img src="https://cdn6.agoda.net/images/mvc/default/ic_cards.png" alt="" class="sc-fznYue kuXQok"></div>
+                                                                                </div>
+                                                                                <div class="Box-sc-kv6pi1-0 kAGtnG">
+                                                                                    <p class="Typographystyled__TypographyStyled-sc-j18mtu-0 dfynWD kite-js-Typography ">Visa / MasterCard / Amex / JCB</p>
+                                                                                </div>
+                                                                                <svg width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="SvgIconstyled__SvgIconStyled-sc-1i6f60b-0 ibyDZc Selectstyled__SelectActionIcon-sc-1vfjv54-1 ccAwet">
+                                                                                    <path d="M13.416 17.998a2 2 0 0 1-2.828 0l-.004-.005-9.377-9.436A1.5 1.5 0 0 1 2.27 6h19.522a1.5 1.5 0 0 1 1.06 2.56l-9.437 9.438z"></path>
+                                                                                </svg>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="Box-sc-kv6pi1-0 kMnKjp">
+                                                                <span class="Icon__icon--3eqZe sc-oTmZL kfNTWi Icon__green--1yyRq" style="width: 14px; height: 14px;">
+                                                                    <svg role="img" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                                                                        <path class="prefix__thin-check_svg__thin-check_svg__thin-check_svg__thin-check_svg__thin-check_svg__thin-check_svg__thin-check_svg__thin-check_svg__thin-check_svg__thin-check_svg__thin-check_svg__thin-check_svg__thin-check_svg__thin-check_svg__thin-check_svg__thin-check_svg__st0" d="M31.7 4.5c-.4-.4-1-.4-1.4 0L10.6 25.4l-9-8c-.4-.4-1-.3-1.4.1-.4.4-.3 1 .1 1.4l9.7 8.7c.2.2.4.3.7.3.3 0 .5-.1.7-.3L31.7 5.9c.4-.4.4-1.1 0-1.4z"></path>
+                                                                    </svg>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div spacing="S" class="Gridstyled__GridStyled-sc-dfh2k0-0 byKdDe">
+                                                        <div class="Box-sc-kv6pi1-0 lovflz">
+                                                            <span class="Spanstyled__SpanStyled-sc-16tp9kb-0 ietndM kite-js-Span Box-sc-kv6pi1-0 hWIfpV" data-component="annotation-message">Bước cuối cùng! Sẽ không tính phí thẻ của quý khách trong hôm nay. Chỉ yêu cầu thẻ của quý khách để xác nhận đơn đặt phòng.</span>
+                                                            <div class="Box-sc-kv6pi1-0 dcFufr sc-fznNTe lfUDhf"></div>
+                                                        </div>
+                                                        <div class="Itemstyled__Item-sc-12uga7p-0 jxjTNs">
+                                                            <div class="GuestField__field--EBQS0">
+                                                                <div class="GuestField__fieldInputWrapper--2xMi_">
+                                                                    <label for="cardHolderName" class="Labelstyled__LabelStyled-sc-cj4uls-0 cjmpmM">
+                                                                        <span class="Spanstyled__SpanStyled-sc-16tp9kb-0 lfpNCX kite-js-Span ">
+                                                                            Tên trên thẻ
+                                                                            <span class="Spanstyled__SpanStyled-sc-16tp9kb-0 eroyZE kite-js-Span "> *</span>
+                                                                        </span>
+                                                                    </label>
+                                                                    @Html.TextBox("Tentrenthe", null, new
+                                                                        {
+                                                                            @class = "Inputstyled__StyledInput-sc-mcn0ij-0 juFtOS kite-js-Input ",
+                                                                            placeholder = "Xin vui lòng điền họ tên chủ thẻ.",
+
+                                                                                    @id = "cardHolderName",
+                                                                            required = "required"
+                                                                        })
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="Itemstyled__Item-sc-12uga7p-0 jxjTNs">
+                                                            <div class="GuestField__field--EBQS0">
+                                                                <div class="GuestField__fieldInputWrapper--2xMi_">
+                                                                    <label for="cardNumber" class="Labelstyled__LabelStyled-sc-cj4uls-0 cjmpmM"><span class="Spanstyled__SpanStyled-sc-16tp9kb-0 lfpNCX kite-js-Span ">Số thẻ tín dụng/thẻ ghi nợ<span class="Spanstyled__SpanStyled-sc-16tp9kb-0 eroyZE kite-js-Span "> *</span></span></label>
+                                                                    <div class="Inputstyled__StyledInputContainer-sc-mcn0ij-1 bEtlpv">
+                                                                        @Html.TextBox("Sothe", null, new
+                                                                        {
+                                                                            @class = "Inputstyled__StyledInput-sc-mcn0ij-0 juFtOS kite-js-Input ",
+                                                                            placeholder = "Vui lòng nhập số thẻ tín dụng",
+
+                                                                                    @id = "cardNumber",
+                                                                            required = "required"
+                                                                        })
+
+
+                                                                        <svg width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="SvgIconstyled__SvgIconStyled-sc-1i6f60b-0 ibyDZc">
+                                                                            <path d="M5.286 9.143V6.388A6.388 6.388 0 0 1 11.673 0h1.167a6.388 6.388 0 0 1 6.388 6.388v2.768A2 2 0 0 1 21 11.143v10.714a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V11.143a2 2 0 0 1 2-2h.286zm2 0h9.942V6.388A4.388 4.388 0 0 0 12.84 2h-1.167a4.388 4.388 0 0 0-4.387 4.388v2.755zM13 17.829a3.001 3.001 0 1 0-2 0v2.15a1 1 0 1 0 2 0v-2.15zM11 15a1 1 0 1 1 2 0 1 1 0 0 1-2 0z"></path>
+                                                                        </svg>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="Itemstyled__Item-sc-12uga7p-0 fnmPLA">
+                                                            <label for="expiryDate" class="Labelstyled__LabelStyled-sc-cj4uls-0 cjmpmM">
+                                                                <span class="Spanstyled__SpanStyled-sc-16tp9kb-0 lfpNCX kite-js-Span ">
+                                                                    Ngày hết hạn
+                                                                    <span class="Spanstyled__SpanStyled-sc-16tp9kb-0 eroyZE kite-js-Span "> *</span>
+                                                                </span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="Itemstyled__Item-sc-12uga7p-0 donnCo"><label for="cvv" class="Labelstyled__LabelStyled-sc-cj4uls-0 cjmpmM"><span class="Spanstyled__SpanStyled-sc-16tp9kb-0 lfpNCX kite-js-Span ">Mã bảo mật CVC<span class="Spanstyled__SpanStyled-sc-16tp9kb-0 eroyZE kite-js-Span "> *</span></span></label></div>
+                                                        <div class="Itemstyled__Item-sc-12uga7p-0 fnmPLA">
+                                                            <div data-component="SavedExpiryDate" class="sc-AxjAm sc-AxirZ iXgDep">
+                                                                <div class="sc-fzoxKX jXmLAO">
+                                                                    <div class="GuestField__field--EBQS0">
+                                                                        <div class="GuestField__fieldInputWrapper--2xMi_">
+                                                                            @Html.TextBox("Ngayhethan", null, new
+                                                                            {
+                                                                                @class = "Inputstyled__StyledInput-sc-mcn0ij-0 juFtOS kite-js-Input ",
+                                                                                placeholder = "Vui lòng nhập số thẻ tín dụng",
+
+                                                                                        @id = "expiryDate",
+                                                                                required = "required"
+                                                                            })
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="Itemstyled__Item-sc-12uga7p-0 donnCo">
+                                                            <div class="Gridstyled__GridStyled-sc-dfh2k0-0 dPimPQ">
+                                                                <div data-component="Cvv" class="Gridstyled__GridStyled-sc-dfh2k0-0 dSvrGM">
+                                                                    <div class="Itemstyled__Item-sc-12uga7p-0 bEYvIw">
+                                                                        <div class="GuestField__field--EBQS0">
+                                                                            <div class="GuestField__fieldInputWrapper--2xMi_">
+                                                                                <div class="Inputstyled__StyledInputContainer-sc-mcn0ij-1 bEtlpv">
+                                                                                    @Html.Password("Mabaomat", null, new
+                                                                                    {
+                                                                                        @class = "Inputstyled__StyledInput-sc-mcn0ij-0 juFtOS kite-js-Input ",
+
+
+                                                                                                @id = "cvv",
+                                                                                        required = "required"
+                                                                                    })
+
+                                                                                    <svg width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="SvgIconstyled__SvgIconStyled-sc-1i6f60b-0 ibyDZc">
+                                                                                        <path d="M5.286 9.143V6.388A6.388 6.388 0 0 1 11.673 0h1.167a6.388 6.388 0 0 1 6.388 6.388v2.768A2 2 0 0 1 21 11.143v10.714a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V11.143a2 2 0 0 1 2-2h.286zm2 0h9.942V6.388A4.388 4.388 0 0 0 12.84 2h-1.167a4.388 4.388 0 0 0-4.387 4.388v2.755zM13 17.829a3.001 3.001 0 1 0-2 0v2.15a1 1 0 1 0 2 0v-2.15zM11 15a1 1 0 1 1 2 0 1 1 0 0 1-2 0z"></path>
+                                                                                    </svg>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="Itemstyled__Item-sc-12uga7p-0 caUmOU"><img data-element="cvv-icon" srcset="https://cdn6.agoda.net/images/new-bf/cvv-icon.png 1x, https://cdn6.agoda.net/images/new-bf/cvv-icon@2x.png 2x" src="https://cdn6.agoda.net/images/new-bf/cvv-icon.png" alt="3-digit security code on back of your card"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="Itemstyled__Item-sc-12uga7p-0 giQxte"></div>
+                                                        <div class="Itemstyled__Item-sc-12uga7p-0 cVEqma"></div>
+                                                        <div class="Itemstyled__Item-sc-12uga7p-0 jxjTNs"></div>
+                                                        <div class="Itemstyled__Item-sc-12uga7p-0 jxjTNs">
+                                                            <button type="submit" data-component="pacContactContinueToPaymentButton" class="Buttonstyled__ButtonStyled-sc-5gjk6l-0 dMnHeO sc-qQxXP efhDEa" color="primary">
+                                                                <div class="BaseButtonstyled__HiddenToggler-sc-12j2fzo-2 bNbaJn">
+                                                                    <div class="Box-sc-kv6pi1-0 jEyiBE">
+                                                                        Trở lại trang đặt hàng
+                                                                    </div>
+                                                                </div>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+        <div>
+            <div class="Box-sc-kv6pi1-0 eboHYM">
+                <div data-component="partial-success-banner" role="banner" class="sc-AxheI sc-Axmtr lcldTb sc-fzoXWK cylrVd">
+                    <div class="sc-AxheI sc-Axmtr cJsQSL">
+                        <svg role="img" aria-hidden="true" direction="ltr" class="sc-fzoLsD sc-fzpans hHkvKb"><use href="#LightbulbSymbolFillIcon"></use></svg>
+                    </div>
+                    <div class="sc-AxheI sc-Axmtr kxtUsB">
+                        <div class="sc-AxheI sc-Axmtr dfeSkm">
+                            <p class="sc-fzokOt sc-fzqBZW jcIrwd">Về việc đặt nhiều món hàng của quý khách</p>
+                            <p class="sc-fzokOt sc-fzqBZW iokXYr">Ngay cả khi không thể đặt bất kỳ món hàng nào không có sẵn, các món có sẵn vẫn sẽ được đặt.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Box-sc-kv6pi1-0 ewabhv sc-psRme cCWryv">
+            <div data-component="contact-summary"><strong class="Textstyled__TextStyled-sc-i6xj58-0 bpwZcc kite-js-DEPRECATED_Text ">Chi tiết liên lạc</strong></div>
+            <div data-component="name-container" class="Box-sc-kv6pi1-0 cJAgr">
+                <div class="Box-sc-kv6pi1-0 cjkqFg">
+                    <svg width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="SvgIconstyled__SvgIconStyled-sc-1i6f60b-0 ePnMwb">
+                        <path d="M8.51 11.5a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9zm8.945 9.59a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1c0-5.058 3.894-9.18 8.727-9.18s8.728 4.122 8.728 9.18zM15 3a1 1 0 0 1 0-2h7.466a1 1 0 1 1 0 2H15zm0 4a1 1 0 0 1 0-2h7.466a1 1 0 1 1 0 2H15zm0 4a1 1 0 0 1 0-2h3.733a1 1 0 0 1 0 2H15z"></path>
+                    </svg>
+                </div>
+                <div class="Box-sc-kv6pi1-0 iRKOJU">
+                    <strong data-component="name-container-name" class="Textstyled__TextStyled-sc-i6xj58-0 cIyawz kite-js-DEPRECATED_Text NameContainer__textWrapper--317Lu">@khach.TenKH @khach.HoKH</strong>
+                    <div data-component="name-container-detail"><span data-wl-no-leak-test="true" class="Textstyled__TextStyled-sc-i6xj58-0 hxBUSZ kite-js-DEPRECATED_Text NameContainer__textWrapper--317Lu">@khach.Email</span></div>
+                    <div data-component="name-container-detail"><span data-wl-no-leak-test="true" class="Textstyled__TextStyled-sc-i6xj58-0 hxBUSZ kite-js-DEPRECATED_Text NameContainer__textWrapper--317Lu">+84 123456788</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="sc-pcxhi kMxZOc">
+            <section class="Section__section--2IJ78 Section__lightGrey--2cUs1 EmailConfirmationMessage__emailConfirmationMessage--_Dqz5" data-component="EmailConfirmationMessage">
+                <span class="Icon__icon--3eqZe EmailConfirmationMessage__mailIcon--t9vz-" style="width: 28px; height: 28px;">
+                    <svg role="img" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 18">
+                        <g fill="none" fill-rule="evenodd">
+                            <path fill="#C6C6C6" d="M10.059 7.367a.339.339 0 0 1-.196-.068.778.778 0 0 0-.234-.108L0 1.508v-.196C0 .974.11.734.332.59.553.447.84.375 1.192.375h17.617c.351 0 .638.088.859.264.221.175.332.42.332.732l-9.57 5.82c-.091.066-.16.111-.205.137a.33.33 0 0 1-.166.04zm1.25 1.25 8.75-5.312v9.883c0 .338-.12.579-.362.722-.24.143-.517.215-.83.215H1.191c-.351 0-.638-.078-.859-.234C.111 13.734 0 13.5 0 13.187V3.5l8.75 5.117c.286.156.53.28.732.371a1.4 1.4 0 0 0 .577.137c.195 0 .39-.046.586-.137.195-.09.416-.215.664-.37z"></path>
+                            <circle cx="23" cy="12.5" r="6" fill="#F5F5F5"></circle>
+                            <path fill="#488BF8" d="M23 7.625c.69 0 1.338.132 1.943.396a5.1 5.1 0 0 1 1.587 1.074 5.1 5.1 0 0 1 1.074 1.587c.264.605.396 1.253.396 1.943 0 .69-.132 1.338-.396 1.943a5.1 5.1 0 0 1-1.074 1.587 5.1 5.1 0 0 1-1.587 1.074 4.814 4.814 0 0 1-1.943.396c-.69 0-1.338-.132-1.943-.396a5.1 5.1 0 0 1-1.587-1.074 5.1 5.1 0 0 1-1.074-1.587A4.814 4.814 0 0 1 18 12.625c0-.69.132-1.338.396-1.943a5.1 5.1 0 0 1 1.074-1.587 5.1 5.1 0 0 1 1.587-1.074A4.814 4.814 0 0 1 23 7.625zm2.686 3.467a.488.488 0 0 0 .097-.322c0-.137-.032-.238-.097-.303a.584.584 0 0 0-.323-.059c-.136.007-.237.049-.302.127l-3.213 3.027-1.133-.37c-.235-.079-.381-.105-.44-.079a.642.642 0 0 0-.185.137c-.078.065-.117.135-.117.21 0 .075.029.151.088.23l1.875 1.845 3.75-4.443z"></path>
+                        </g>
+                    </svg>
+                </span>
+                Chúng tôi sẽ gởi xác nhận đặt phòng của bạn đến <strong>@khach.Email</strong>
+            </section>
+        </div>
+        <section class="sc-qYSYK PVVMP">
+            <div class="Gridstyled__GridStyled-sc-1dsyre8-0 jLOrqp">
+                <div class="Rowstyled__RowStyled-sc-rdodmc-0 cQsrFS">
+                    <div class="Colstyled__ColStyled-sc-jxq45s-0 fdqRBh">
+                        <div class="sc-psCJM iGEATp">Thực hiện bước tiếp theo đồng nghĩa với việc bạn chấp nhận tuân theo <a href="/vi-vn/info/termsofuse.html" target="_blank" class="sc-fzoXzr eZCuZU"><span class="sc-fzokOt sc-fzqBZW kumFut sc-fzoyAV fQsatj" label="Điều khoản sử dụng">Điều khoản sử dụng</span></a> và <a href="/vi-vn/info/privacy.html" target="_blank" class="sc-fzoXzr eZCuZU"><span class="sc-fzokOt sc-fzqBZW kumFut sc-fzoyAV fQsatj" label="Chính sách bảo mật">Chính sách bảo mật</span></a> của Agoda.</div>
+                    </div>
+                    <div class="Colstyled__ColStyled-sc-jxq45s-0 fGIQsR">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+    </div>
+    <div class="Itemstyled__Item-sc-12uga7p-0 qvXWa">
+        <div class="Box-sc-kv6pi1-0 ggYisV sc-qYIQh dLRQdk PackageDetails" data-component="packageDetail">
+            <div class="Box-sc-kv6pi1-0 ggYisV sc-pBzUF sc-pHIBf jQWvdR">
+                <h4 class="Headingstyled__HeadingStyled-sc-v3bqq6-0 colpVN kite-js-Heading sc-pQEbo dUrmQP">Tóm tắt Đặt phòng</h4>
+            </div>
+            @foreach (var phong in Model)
+            {
+                <div data-component="pacPropertyDetail" class="Box-sc-kv6pi1-0 ggYisV sc-pBzUF dopMPf">
+                    <div>
+                        <h5 class="Headingstyled__HeadingStyled-sc-v3bqq6-0 kkKQOj kite-js-Heading Box-sc-kv6pi1-0 bKIozy" data-component="property-title">
+                            <svg width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="SvgIconstyled__SvgIconStyled-sc-1i6f60b-0 ibyDZc">
+                                <path d="M2.176 1.018L9.263 1a1.179 1.179 0 0 1 1.182 1.176v7.8c0 .26-.247.447-.498.378L7.5 9.678a.786.786 0 0 0-.995.757v11.358c0 .65-.528 1.178-1.18 1.178H2.18A1.179 1.179 0 0 1 1 21.793V2.197c0-.65.526-1.177 1.176-1.179zm1.387 1.55a1 1 0 0 0-1 1v.357a1 1 0 0 0 1 1h.358a1 1 0 0 0 1-1v-.358a1 1 0 0 0-1-1h-.358zm3.93 0a1 1 0 0 0-1 1v.357a1 1 0 0 0 1 1h.357a1 1 0 0 0 1-1v-.358a1 1 0 0 0-1-1h-.358zm-3.93 3.928a1 1 0 0 0-1 1v.358a1 1 0 0 0 1 1h.358a1 1 0 0 0 1-1v-.358a1 1 0 0 0-1-1h-.358zm0 3.93a1 1 0 0 0-1 1v.357a1 1 0 0 0 1 1h.358a1 1 0 0 0 1-1v-.357a1 1 0 0 0-1-1h-.358zm13.164 3.985c.464.17.773.614.772 1.109l-.013 6.29a1.179 1.179 0 0 1-1.182 1.176h-.008l-1.54-.015a.393.393 0 0 1-.39-.393v-3.113a.393.393 0 0 0-.392-.393h-2.382a.393.393 0 0 0-.393.393v3.113a.393.393 0 0 1-.393.393H9.239a1.179 1.179 0 0 1-1.178-1.178v-9.441a.786.786 0 0 1 1.057-.738l7.609 2.797zm-.375-8.716h5.487c.65 0 1.178.528 1.178 1.179v14.919c0 .65-.527 1.178-1.178 1.178h-1.602a1.179 1.179 0 0 1-1.179-1.178v-7.189c0-.483-.295-.917-.744-1.096l-2.893-1.145a.393.393 0 0 1-.248-.366V6.874c0-.651.528-1.179 1.179-1.179z"></path>
+                            </svg>
+                            KHÁCH SẠN<span class="Spanstyled__SpanStyled-sc-16tp9kb-0 ietndM kite-js-Span Box-sc-kv6pi1-0 bvxWOH">Siêu Vip Pro Max</span>
+                        </h5>
+                        <div class="Box-sc-kv6pi1-0 sc-pscky ffCoOV">
+                            <div class="Box-sc-kv6pi1-0 kjJVeg">
+                                <img class="Image__image--gF70P sc-pjHjD CNlcm" src="~/Images/@phong.Hinhminhhoa" srcset="https://pix8.agoda.net/hotelImages/42033094/-1/4a4eae250b383eac4b77be419d0a04ab.jpg?ce=0&amp;s=828x464&amp;ar=16x9 2x,https://pix8.agoda.net/hotelImages/42033094/-1/4a4eae250b383eac4b77be419d0a04ab.jpg?ce=0&amp;s=828x464&amp;ar=16x9 3x" alt="" data-section="hotel-image">
+                            </div>
+                            <div class="Box-sc-kv6pi1-0 cGWGBL">
+                                <div class="Box-sc-kv6pi1-0 cjeKVM">
+                                    <div class="sc-qQYBZ wIkUb">
+                                        <div class="Clamp__clamp--aI1ol" style="--line-clamp: 2; --line-height: 1.5em; --height-fallback: 3em; --ellipsis-background: white; --min-height: 0;"><span class="Spanstyled__SpanStyled-sc-16tp9kb-0 exTIsi kite-js-Span " data-section="property-name">@phong.Tensp</span></div>
+                                    </div>
+                                </div>
+
+                                <div class="Box-sc-kv6pi1-0 jKvfch">
+                                    <div class="Box-sc-kv6pi1-0 ReviewBubble__ReviewBubbleStyled-sc-1adx17l-0 dorXnb">
+                                        <div class="Box-sc-kv6pi1-0 bZGPNR">
+                                            <svg width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="SvgIconstyled__SvgIconStyled-sc-1i6f60b-0 hOHgEZ Box-sc-kv6pi1-0 jlKhZq" style="transform: scaleX(-1);">
+                                                <path d="M1.499 2.553h20.32a2 2 0 0 1 2 2v14.983a2 2 0 0 1-2 2H4.829a2 2 0 0 1-2-2V8.333L.298 4.951a1.5 1.5 0 0 1 1.2-2.398z"></path>
+                                            </svg>
+                                            <div class="Box-sc-kv6pi1-0 kWKCAT"><span class="Spanstyled__SpanStyled-sc-16tp9kb-0 eqjEjF kite-js-Span ">9.0</span></div>
+
+                                        </div>
+                                        <div class="Box-sc-kv6pi1-0 blTjMr"><span class="Spanstyled__SpanStyled-sc-16tp9kb-0 gHUzZp kite-js-Span ">Tuyệt vời</span></div>
+                                        <div class="Box-sc-kv6pi1-0 blTjMr"><span class="Spanstyled__SpanStyled-sc-16tp9kb-0 gHUzZp kite-js-Span ">@phong.Mausac</span></div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Box-sc-kv6pi1-0 haCUvI">
+                            @*mỗi dòng p là 1 dòng*@
+                            <p class="Paragraphstyled__ParagraphStyled-sc-180znkb-0 dxzjpM kite-js-Paragraph ">
+
+                                <div class="Box-sc-kv6pi1-0 kLjxRf"><img src="~/Images/bed.icon.png" width="25" height="25" />1 x @phong.Tensp </div>
+                            </p>
+                            <p class="Paragraphstyled__ParagraphStyled-sc-180znkb-0 dxzjpM kite-js-Paragraph ">
+
+                                <div class="Box-sc-kv6pi1-0 kLjxRf"><img src="~/Images/user.png" width="25" height="25" />1 phòng, 2 người lớn</div>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <div class="Box-sc-kv6pi1-0 ggYisV sc-pBzUF sc-pzYib eOINos"><a href="javascript:void(0);" data-component="pacBookingConditionslink" class="Linkstyled__LinkStyled-sc-17yyd6k-0 RduKx sc-pQSRh kUecYO"><span class="Spanstyled__SpanStyled-sc-16tp9kb-0 exTIsi kite-js-Span sc-pZnSc kQWAGm">Điều kiện đặt chỗ</span></a></div>
+        </div>
+        <div>
+            <div class="Box-sc-kv6pi1-0 ggYisV sc-pBzUF dopMPf">
+                <div class="Box-sc-kv6pi1-0 eoinRl">
+                    <h3 class="Headingstyled__HeadingStyled-sc-v3bqq6-0 colpVN kite-js-Heading sc-pRSgm kKcmPp">Chi Tiết Giá</h3>
+                </div>
+                <div data-component="mainPriceBreakdown" class="sc-paWVw gzcrzB"></div>
+
+                <div role="separator" class="sc-AxheI sc-Axmtr dQlEyA"></div>
+                <div data-component="TotalCostComponent" class="Box-sc-kv6pi1-0 jEyiBE">
+                    <div class="Gridstyled__GridStyled-sc-dfh2k0-0 ljKCUA">
+                        <div class="Itemstyled__Item-sc-12uga7p-0 iwteGo">
+                            <div class="Box-sc-kv6pi1-0 hsosKQ">
+                                <p class="Typographystyled__TypographyStyled-sc-j18mtu-0 dEpskg kite-js-Typography ">Tổng cộng</p>
+                            </div>
+                        </div>
+                        <div class="Itemstyled__Item-sc-12uga7p-0 caUmOU">
+                            <div class="Box-sc-kv6pi1-0 dpPGRY">
+                                <p class="Typographystyled__TypographyStyled-sc-j18mtu-0 dEpskg1 kite-js-Typography ">@string.Format("{0:#,##0.00}", @ViewBag.TongTien)$</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div data-component="TotalCostComponent-TaxAndFeeLabel" class="Box-sc-kv6pi1-0 jEyiBE">
+                    <div class="Gridstyled__GridStyled-sc-dfh2k0-0 ljKCUA">
+                        <div class="Itemstyled__Item-sc-12uga7p-0 iwteGo">
+                            <div class="Box-sc-kv6pi1-0 hsosKQ">
+                                <p class="Typographystyled__TypographyStyled-sc-j18mtu-0 lckdqf kite-js-Typography "><span>cộng thuế và phí</span></p>
+                            </div>
+                        </div>
+                        <div class="Itemstyled__Item-sc-12uga7p-0 caUmOU">
+                            <div class="Box-sc-kv6pi1-0 dpPGRY"></div>
+                        </div>
+                    </div>
+                </div>
+                <div role="separator" class="sc-AxheI sc-Axmtr dQlEyA"></div>
+                <div data-component="FinalPriceComponent" class="Box-sc-kv6pi1-0 gSFWHG">
+                    <div class="Box-sc-kv6pi1-0 jEyiBE">
+                        <div class="Gridstyled__GridStyled-sc-dfh2k0-0 ljKCUA">
+                            <div class="Itemstyled__Item-sc-12uga7p-0 iwteGo">
+                                <div class="Box-sc-kv6pi1-0 hsosKQ">
+                                    <p class="Typographystyled__TypographyStyled-sc-j18mtu-0 dEpskg kite-js-Typography ">Tổng quý khách trả</p>
+                                </div>
+                            </div>
+                            <div class="Itemstyled__Item-sc-12uga7p-0 caUmOU">
+                                <div class="Box-sc-kv6pi1-0 dpPGRY">
+                                    <p class="Typographystyled__TypographyStyled-sc-j18mtu-0 dEpskg1 kite-js-Typography ">@string.Format("{0:#,##0.00}", @ViewBag.TongTien)$</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @Html.ActionLink("ĐỒNG Ý ĐẶT HÀNG", "DongYDatHang", null, new
+            {
+                @class = "btn btn - primary" })
+        </div>
+    </div>
+</div>
+

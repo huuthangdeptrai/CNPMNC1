@@ -1,0 +1,171 @@
+﻿
+@{
+    ViewBag.Title = "DangNhap";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <script>
+           alert(decodeURIComponent("@Html.Raw(TempData["SuccessMessage"])"));
+    </script>
+}
+<div class="promotion-block__inner">
+    <div class="container">
+        <div class="promotion-inner">
+            <div class="promotion-slide">
+                <div class="container">
+                    <div class="promotion-slide__inner">
+
+                        <div class="mmb-login-form-panel mmb-panel-form-gap">
+                            <div class="fgtuA-D">
+                                <div class="mXdik">
+                                    <div data-cy="signup-panel-title" class="sc-AxgMl drXva">
+                                        <h3 class="sc-fznBMq fbXRDK kite-js-Typography ">Đăng Nhập</h3>
+                                        <div class="cbTNjv">
+                                            <h6 class="sc-fzqyvX gRJRPM kite-js-Typography ">Đăng nhập bằng Facebook và Email</h6>
+                                        </div>
+                                    </div>
+                                    <div class="iWplGZ">
+                                        <div class="jtMJCi">
+                                            <div class="jIcqRC">
+
+                                                @using (Html.BeginForm("DangNhap", "NguoiDung"))
+                                                {
+                                                    <div class="iIozRy">
+                                                        @Html.ValidationSummary(true)
+
+                                                        <div class="jIcqRC">
+                                                            <div class="daSMuo">
+                                                                <span class="dzZFTs">
+                                                                    Email
+                                                                </span>
+                                                            </div>
+                                                            <div class="ifEknM">
+                                                                @Html.TextBox("Email", null, new
+                                                        {
+                                                            @class = "iksYDU jJAzoG",
+                                                            placeholder = "Email",
+
+                                                                    @id = "name",
+                                                            required = "required"
+                                                        })
+                                                            </div>
+
+                                                        </div>
+
+                                                        <div class="jIcqRC">
+                                                            <div class="daSMuo">
+                                                                <span class="dzZFTs">
+                                                                    Mật khẩu
+                                                                </span>
+                                                            </div>
+                                                            <div class="ifEknM">
+                                                                @Html.Password("Matkhau", null, new
+                                                        {
+                                                            @class = "iksYDU jJAzoG",
+                                                            placeholder = "Mật khẩu",
+
+                                                            @id = "name",
+                                                            required = "required"
+                                                        })
+                                                            </div>
+
+                                                        </div>
+
+                                                        @if (TempData["ErrorMessage"] != null)
+                                                        {
+                                                            <div style="font-size:14px;color:red;font-weight:600;">
+                                                                @TempData["ErrorMessage"]
+                                                            </div>
+                                                        }
+                                                        <div class="jIcqRC">
+                                                            <div class="ifEknM">
+                                                                <label class="irPEll">
+                                                                    <input id="newsLetter" name="newsLetter" data-cy="newsLetter" type="checkbox" class="sc-fzqPZZ jBnsSm" checked="">
+                                                                    <span class="sc-fznZeY dzZFTs sc-fzoKki cxVrpv">Ghi nhớ tài khoản giúp tôi</span>
+                                                                </label>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="jIcqRC">
+                                                            <button type="submit" class="dmnfeu">
+                                                                <div class="jkvegZ">
+                                                                    <div class="gfGIVK">
+                                                                        <div class="dAxUxB">
+                                                                            Đăng nhập
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </button>
+                                                        </div>
+
+                                                    </div>
+
+                                                    <div class="bOirrJ">
+                                                        <a class="qPKjW" href="~/NguoiDung/DangKy">
+                                                            <span class="dzZFTs">Tạo tài khoản</span>
+                                                        </a>
+                                                        <a class="qPKjW" href="#">
+                                                            <div class="sc-AxgMl jWIkjO" style="vertical-align: middle;">
+                                                                <svg width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="sc-fzoyAV jwemYc">
+                                                                    <path d="M5.286 9.143V6.388A6.388 6.388 0 0 1 11.673 0h1.167a6.388 6.388 0 0 1 6.388 6.388 1 1 0 0 1-2 0A4.388 4.388 0 0 0 12.84 2h-1.167a4.388 4.388 0 0 0-4.387 4.388v2.755H19a2 2 0 0 1 2 2v10.714a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V11.143a2 2 0 0 1 2-2h.286zM13 17.829a3.001 3.001 0 1 0-2 0v2.15a1 1 0 1 0 2 0v-2.15zM11 15a1 1 0 1 1 2 0 1 1 0 0 1-2 0z"></path>
+                                                                </svg>
+                                                            </div>
+                                                            <span class="dzZFTs">
+                                                                Quên mật khẩu ?
+                                                            </span>
+                                                        </a>
+                                                    </div>
+                                                }
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="bsJrQz">
+                                        <div class="sc-fzoyTs eMdnSA"></div>
+                                        <div class="sc-AxgMl hDVyIJ"><span class="sc-fznZeY dzZFTs">hoặc tiếp tục với</span></div>
+                                        <div class="sc-fzoyTs eMdnSA"></div>
+                                    </div>
+                                    <div class="drXva">
+                                        <div class="gfGIVK">
+                                            <div class="joSgZT">
+                                                <div class="jIcqRC">
+                                                    <div class="ejSjga">
+                                                        <div class="sc-AxhCb jIcqRC">
+                                                            <button class="kiFFiN bGmNDF">
+                                                                <div class="jkvegZ">
+                                                                    <div class="bdPxIn">
+                                                                        <img src="https://cdn6.agoda.net/images/universal-login/google-logo-v2.svg" width="22px" height="22px" style="">
+                                                                    </div>
+                                                                    <div class="gfGIVK">
+                                                                        <span class="dAxUxB">Google</span>
+                                                                    </div>
+                                                                </div>
+                                                            </button>
+                                                        </div>
+                                                        <div class="sc-AxhCb kEkzhC"><button data-element-name="universal-login-facebook-button" data-cy="facebook-button" radius="S" class="sc-fzqARJ kiFFiN sc-oUcyK bGmNDF" color="primary"><div class="sc-fzoiQi jkvegZ"><div class="sc-AxgMl bdPxIn"><img src="https://cdn6.agoda.net/images/universal-login/facebook-logo.svg" width="22px" height="22px" style=""></div><div class="sc-AxgMl gfGIVK"><span class="sc-fznZeY dAxUxB">Facebook</span></div></div></button></div>
+                                                        <div class="sc-AxhCb kEkzhC"><button data-element-name="universal-login-apple-button" data-cy="apple-button" sizes="XL" radius="S" class="sc-fzqARJ kiFFiN sc-oUcyK bGmNDF" color="primary"><div class="sc-fzoiQi jkvegZ"><div class="sc-AxgMl bdPxIn"><img src="https://cdn6.agoda.net/images/universal-login/apple-logo.svg" width="22px" height="22px" style=""></div><div class="sc-AxgMl gfGIVK"><span class="sc-fznZeY dAxUxB">Apple</span></div></div></button></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="bsJrQz">
+                                        <div class="sc-fzoyTs eMdnSA"></div>
+                                    </div>
+
+                                   
+                                    <div class="sc-AxgMl bFGaPh"><span data-cy="terms-policy" class="sc-fznZeY caqilX"><span>Khi đăng nhập, tôi đồng ý với các Điều khoản sử dụng và Chính sách bảo mật của SalePhone.</span></span></div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+

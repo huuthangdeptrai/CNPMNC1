@@ -1,0 +1,159 @@
+﻿@using WebDienThoaiDiDong.Models;
+@model IEnumerable<DANHMUC>
+<!--Dùng bảng nào sẽ lấy dữ liệu bảng đó-->
+@foreach(var danhmuc in Model)
+            {
+                <a href="~/SanPham/FilterResults">
+                    @if (danhmuc.MaDanhMuc == 100)
+                    {
+                        <div class="giaodienchude">
+                            <div class="danhsachchude">
+                                <div class="noidungchude">
+
+                                    <img height="214px" width="100%" alt="Iphone" src="~/Images/ip.jpg" loading="lazy" class="sc-fFubgz sc-bkzZxe iTEqEL" sizes="215px">
+                                    <div class="readmore">
+                                        <div class="title-chude">
+                                            <h2 class="name-chude">@danhmuc.TenDanhMuc</h2>                                          
+                                        </div>
+                                    </div>
+                                    <div class="tenchude">
+                                        <h3 class="ten1chude">
+                                            @danhmuc.TenDanhMuc
+                                        </h3>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    }
+                    @if (danhmuc.MaDanhMuc == 101)
+                    {
+                        <div class="giaodienchude">
+                            <div class="danhsachchude">
+                                <div class="noidungchude">
+
+                                    <img height="214px" width="100%" alt="Iphone" src="~/Images/ss.jpg" loading="lazy" class="sc-fFubgz sc-bkzZxe iTEqEL" sizes="215px">
+                                    <div class="readmore">
+                                        <div class="title-chude">
+                                            <h2 class="name-chude">@danhmuc.TenDanhMuc</h2>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="tenchude">
+                                        <h3 class="ten1chude">
+                                            @danhmuc.TenDanhMuc
+                                        </h3>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    }
+                    @if (danhmuc.MaDanhMuc == 102)
+                    {
+                        <div class="giaodienchude">
+                            <div class="danhsachchude">
+                                <div class="noidungchude">
+
+                                    <img height="214px" width="100%" alt="Iphone" src="~/Images/xiaomi.jpg" loading="lazy" class="sc-fFubgz sc-bkzZxe iTEqEL" sizes="215px">
+                                    <div class="readmore">
+                                        <div class="title-chude">
+                                            <h2 class="name-chude">@danhmuc.TenDanhMuc</h2>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="tenchude">
+                                        <h3 class="ten1chude">
+                                            @danhmuc.TenDanhMuc
+                                        </h3>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    }                  
+                    @if (danhmuc.MaDanhMuc == 104)
+                    {
+                        <div class="giaodienchude">
+                            <div class="danhsachchude">
+                                <div class="noidungchude">
+
+                                    <img height="214px" width="100%" alt="Iphone" src="~/Images/oppo.jpg" loading="lazy" class="sc-fFubgz sc-bkzZxe iTEqEL" sizes="215px">
+                                    <div class="readmore">
+                                        <div class="title-chude">
+                                            <h2 class="name-chude">@danhmuc.TenDanhMuc</h2>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="tenchude">
+                                        <h3 class="ten1chude">
+                                            @danhmuc.TenDanhMuc
+                                        </h3>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    }
+                    @if (danhmuc.MaDanhMuc == 105)
+                    {
+                        <div class="giaodienchude">
+                            <div class="danhsachchude">
+                                <div class="noidungchude">
+
+                                    <img height="214px" width="100%" alt="Iphone" src="~/Images/vivo.jpg" loading="lazy" class="sc-fFubgz sc-bkzZxe iTEqEL" sizes="215px">
+                                    <div class="readmore">
+                                        <div class="title-chude">
+                                            <h2 class="name-chude">@danhmuc.TenDanhMuc</h2>
+                                           
+                                        </div>
+                                    </div>
+                                    <div class="tenchude">
+                                        <h3 class="ten1chude">
+                                            @danhmuc.TenDanhMuc
+                                        </h3>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    }
+                    
+                    
+                    @if (danhmuc.MaDanhMuc == 109)
+                    {
+                        <div class="giaodienchude">
+                            <div class="danhsachchude">
+                                <div class="noidungchude">
+                                    <img height="214px" width="100%" alt="Iphone" src="~/Images/honor.jpg" loading="lazy" class="sc-fFubgz sc-bkzZxe iTEqEL" sizes="215px">
+                                    <div class="readmore">
+                                        <div class="title-chude">
+                                            <h2 class="name-chude">@danhmuc.TenDanhMuc</h2>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="tenchude">
+                                        <h3 class="ten1chude">
+                                            @danhmuc.TenDanhMuc
+                                        </h3>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    }
+                </a>
+            }
+

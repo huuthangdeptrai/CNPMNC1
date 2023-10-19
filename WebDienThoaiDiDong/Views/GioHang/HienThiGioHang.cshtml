@@ -1,0 +1,141 @@
+﻿@using WebDienThoaiDiDong.Models
+@model List<MatHangMua>
+@{
+    ViewBag.Title = "HienThiGioHang";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+
+}
+
+<div class="isHJoN">
+    <div class="Box-sc-kv6pi1-0 byQMDq">
+        <div class="fVShtT">
+            <div class="iFlqPK">
+                <div class="hNcJPu">
+                    <div class="fqoas">
+                        <h3 class="Headingstyled__HeadingStyled-sc-v3bqq6-0 bonBzT kite-js-Heading ">Thông tin giỏ hàng của quý khách (@ViewBag.TongSL)</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sc-gScZFl jcCxNz">
+                <div class="ldWQKA">
+                    @foreach (var item in Model)
+                    {
+                        <div class="fUqZm IZEUC">
+                            <div class="ldWQKA">
+                                <div class="bVzioO">
+                                    <div class="fJYwpv">
+                                        <a href="#" class="hJeVsa lbpbRY">
+                                            <div class="erpVal">
+                                                <img width="68px" alt="Khách sạn Royal Beach (Royal Beach Hotel)" src="~/Images/@item.Hinhminhhoa" data-component="PropertyDetailImage" class="Box-sc-kv6pi1-0 eBUxKh" style="object-fit: cover; border-radius: 2px;">
+                                                <div class="iorWCE">
+                                                    <div class="Box-sc-kv6pi1-0 sc-eeMvmM jZzcIl eOziZu">
+                                                        <h3 class="Typographystyled__TypographyStyled-sc-j18mtu-0 bwgbhw kite-js-Typography " data-component="PropertyInfoName">@item.Tensp</h3>
+                                                    </div>
+                                                    <div class="iorWCE">
+                                                        <div class="eDjQdz">
+                                                            <div class="ldWQKA">
+                                                                <div aria-label="4 stars rating" role="img" variant="background" color="starRating" shape="star" class="Box-sc-kv6pi1-0 ldWQKA sc-cUEOzv fpJSPv">
+                                                                    Màu sắc: @item.Mausac
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="eDjQdz">
+                                                            <div class="hpWALc">
+                                                                <div class="Box-sc-kv6pi1-0 kpoFfq">Số lượng: @item.Soluong </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="ewhwkj">
+                                                            <p class="Typographystyled__TypographyStyled-sc-j18mtu-0 edPvlS kite-js-Typography " data-component="PropertyReviewText">Lựa chọn hoàn hảo của quý khách</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <a href="#" onclick="showConfirmation()">
+                                        <div class="BaseButtonstyled__HiddenToggler-sc-12j2fzo-2 XgVcH">
+                                            <div class="Box-sc-kv6pi1-0 ldWQKA">
+                                                <div data-component="VariantWrapper" class="Box-sc-kv6pi1-0 ldWQKA">
+                                                    <img src="~/Images/delete.png" width="24" height="24" />
+                                                    @Html.ActionLink("Xóa hàng", "XoaMatHang", "GioHang", new
+                                               {
+                                                   Malsp = item.Malsp
+                                               }, new { style = "background-image: url(/delete.png); width: 24px; height: 24px" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>                                   
+                                </div>
+                            </div>
+                            <div class="kaUUwg">
+                                <div class="Dividerstyled__Sideline-sc-1fq3j2e-1 fSmfcj"></div>
+                            </div>
+                            <div class="ldWQKA">
+                                <div class="iTtdIz">
+                                    <div class="bACINV">
+                                        <div class="Box-sc-kv6pi1-0 cxkDDS">
+                                            <label class="Labelstyled__LabelStyled-sc-cj4uls-0 gBrRwU Checkboxstyled__CheckboxLabel-sc-vp5jkq-1 RdOBe">
+                                                <input data-component="ProductCardFooterCheckBox" data-element-name="cart-item-select" readonly="" type="checkbox" class="Checkboxstyled__CheckboxInput-sc-vp5jkq-0 jERXNX" style="opacity: 0; pointer-events: none;">
+                                                <span class="Spanstyled__SpanStyled-sc-16tp9kb-0 jKjFL kite-js-Span Checkboxstyled__CheckboxSpan-sc-vp5jkq-2 daARTZ">
+                                                    <div data-component="VariantWrapper" aria-label="Chọn Khách sạn Royal Beach (Royal Beach Hotel) 1 x Phòng Hai Giường Đơn Loại Sang không có Ban Công để thanh toán" class="Box-sc-kv6pi1-0 ldWQKA">
+                                                        <span class="Typographystyled__TypographyStyled-sc-j18mtu-0 gVYaYe kite-js-Typography ">
+                                                            <span aria-label="Khách sạn Royal Beach (Royal Beach Hotel), 1 Phòng Hai Giường Đơn Loại Sang không có Ban Công" data-component="PropertyCheckboxText" class="Box-sc-kv6pi1-0 ldWQKA">1 x @item.Tensp</span>
+                                                        </span>
+                                                    </div>
+                                                </span>
+                                            </label>
+                                        </div>                                      
+                                    </div>
+                                    <div class="dYCECS">
+                                        <div class="ldWQKA">
+                                            <div class="fxYueM">
+                                                <div data-component="ProductPricing" class="Box-sc-kv6pi1-0 ldWQKA" style="direction: ltr;">
+                                                    <span class="Typographystyled__TypographyStyled-sc-j18mtu-0 fZBhBL kite-js-Typography ">@string.Format("{0:#,##0.00}", item.Dongia) $</span>
+                                                </div>
+                                            </div>
+                                            <div class="fWhQiy">
+                                                <span class="Typographystyled__TypographyStyled-sc-j18mtu-0 eQLYfa kite-js-Typography " data-component="ProductCardPricingAlt">Bao gồm thuế và phí</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="jWvfxz">
+            <div class="tbtWj">
+                <div class="ldWQKA">
+                    <div class="iFlqPK">
+                        <div class="iorWCE">
+
+                        </div>
+                        <div class="ibBern">
+                            <div class="ldWQKA">
+                                <h3 class="Typographystyled__TypographyStyled-sc-j18mtu-0 fgHKPO kite-js-Typography " data-component="cart-total-price-text">Tổng giá</h3>
+                                <span class="Typographystyled__TypographyStyled-sc-j18mtu-0 bVaItO kite-js-Typography " data-component="cart-total-price-description">@ViewBag.TongSL món hàng, bao gồm thuế và phí</span>
+                            </div>
+                            <div class="deMhkN">
+                                <div data-component="cart-total-price-amount" class="Box-sc-kv6pi1-0 ldWQKA" style="direction: ltr;"><span class="Typographystyled__TypographyStyled-sc-j18mtu-0 bCZnfM kite-js-Typography ">@string.Format("{0:#,##0.00}", @ViewBag.TongTien) $</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ldWQKA">
+
+
+                        <button data-component="cart-checkout-button" color="yellow" class="Buttonstyled__ButtonStyled-sc-5gjk6l-0 izAzR">
+                            <div class="BaseButtonstyled__HiddenToggler-sc-12j2fzo-2 XgVcH">
+                                <div class="Box-sc-kv6pi1-0 ldWQKA">@Html.ActionLink("Tiếp tục", "DatHang", null, new { @class = "ldWQKA" })</div>
+                            </div>
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WebDienThoaiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="DANHMUC">
+    <Key>
+      <PropertyRef Name="MaDanhMuc" />
+    </Key>
+    <Property Name="MaDanhMuc" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenDanhMuc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="HinhMinhHoa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="SANPHAMs" Relationship="WebDienThoaiModel.FK_SanPham_DanhMuc" FromRole="DANHMUC" ToRole="SANPHAM" />
+  </EntityType>
+  <EntityType Name="KHACHHANG">
+    <Key>
+      <PropertyRef Name="MaKH" />
+    </Key>
+    <Property Name="MaKH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenKH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="HoKH" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Matkhau" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Xacnhanmatkhau" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Daduyet" Type="Boolean" />
+    <NavigationProperty Name="DONMUASPs" Relationship="WebDienThoaiModel.FK_DonMuaSP_KhachHang" FromRole="KHACHHANG" ToRole="DONMUASP" />
+  </EntityType>
+  <EntityContainer Name="WebDienThoaiEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="DANHMUCs" EntityType="Self.DANHMUC" />
+    <EntitySet Name="KHACHHANGs" EntityType="Self.KHACHHANG" />
+    <EntitySet Name="SANPHAMs" EntityType="WebDienThoaiModel.SANPHAM" />
+    <AssociationSet Name="FK_SanPham_DanhMuc" Association="WebDienThoaiModel.FK_SanPham_DanhMuc">
+      <End Role="DANHMUC" EntitySet="DANHMUCs" />
+      <End Role="SANPHAM" EntitySet="SANPHAMs" />
+    </AssociationSet>
+    <EntitySet Name="LOAISANPHAMs" EntityType="WebDienThoaiModel.LOAISANPHAM" />
+    <AssociationSet Name="FK_LoaiSanPham_SanPham" Association="WebDienThoaiModel.FK_LoaiSanPham_SanPham">
+      <End Role="SANPHAM" EntitySet="SANPHAMs" />
+      <End Role="LOAISANPHAM" EntitySet="LOAISANPHAMs" />
+    </AssociationSet>
+    <EntitySet Name="DONMUASPs" EntityType="WebDienThoaiModel.DONMUASP" />
+    <AssociationSet Name="FK_DonMuaSP_KhachHang" Association="WebDienThoaiModel.FK_DonMuaSP_KhachHang">
+      <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
+      <End Role="DONMUASP" EntitySet="DONMUASPs" />
+    </AssociationSet>
+    <EntitySet Name="CHITIETDONMUAs" EntityType="WebDienThoaiModel.CHITIETDONMUA" />
+    <AssociationSet Name="FK_ChiTietDonMua_DonMuaSP" Association="WebDienThoaiModel.FK_ChiTietDonMua_DonMuaSP">
+      <End Role="DONMUASP" EntitySet="DONMUASPs" />
+      <End Role="CHITIETDONMUA" EntitySet="CHITIETDONMUAs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ChiTietDonMua_LoaiSanPham" Association="WebDienThoaiModel.FK_ChiTietDonMua_LoaiSanPham">
+      <End Role="LOAISANPHAM" EntitySet="LOAISANPHAMs" />
+      <End Role="CHITIETDONMUA" EntitySet="CHITIETDONMUAs" />
+    </AssociationSet>
+    <EntitySet Name="FEEDBACKs" EntityType="WebDienThoaiModel.FEEDBACK" />
+    <AssociationSet Name="FK_FEEDBACK_SanPham" Association="WebDienThoaiModel.FK_FEEDBACK_SanPham">
+      <End Role="SANPHAM" EntitySet="SANPHAMs" />
+      <End Role="FEEDBACK" EntitySet="FEEDBACKs" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="SANPHAM">
+    <Key>
+      <PropertyRef Name="MaSP" />
+    </Key>
+    <Property Name="MaSP" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenSP" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="HinhMinhHoa" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DungLuong" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="DonGia" Type="Decimal" Nullable="false" Precision="9" Scale="3" />
+    <Property Name="CPU" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ManHinh" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RAM" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UuDai" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="XepHangSao" Type="Int32" />
+    <Property Name="DanhGia" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DiemThuong" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MauSac" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CameraTruoc" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CameraSau" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MoTa" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MaDanhMuc" Type="Int32" />
+    <Property Name="HangDienThoai" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DANHMUC" Relationship="WebDienThoaiModel.FK_SanPham_DanhMuc" FromRole="SANPHAM" ToRole="DANHMUC" />
+    <NavigationProperty Name="LOAISANPHAMs" Relationship="WebDienThoaiModel.FK_LoaiSanPham_SanPham" FromRole="SANPHAM" ToRole="LOAISANPHAM" />
+    <NavigationProperty Name="FEEDBACKs" Relationship="WebDienThoaiModel.FK_FEEDBACK_SanPham" FromRole="SANPHAM" ToRole="FEEDBACK" />
+  </EntityType>
+  <Association Name="FK_SanPham_DanhMuc">
+    <End Type="WebDienThoaiModel.DANHMUC" Role="DANHMUC" Multiplicity="0..1" />
+    <End Type="WebDienThoaiModel.SANPHAM" Role="SANPHAM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DANHMUC">
+        <PropertyRef Name="MaDanhMuc" />
+      </Principal>
+      <Dependent Role="SANPHAM">
+        <PropertyRef Name="MaDanhMuc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="LOAISANPHAM">
+    <Key>
+      <PropertyRef Name="MaLSP" />
+    </Key>
+    <Property Name="MaLSP" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenSP" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="HinhMinhHoa" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DungLuong" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="DonGia" Type="Decimal" Nullable="false" Precision="9" Scale="3" />
+    <Property Name="CPU" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ManHinh" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RAM" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UuDai" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="XepHangSao" Type="Int32" />
+    <Property Name="DanhGia" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DiemThuong" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MauSac" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CameraTruoc" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CameraSau" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MoTa" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MaSP" Type="Int32" />
+    <NavigationProperty Name="SANPHAM" Relationship="WebDienThoaiModel.FK_LoaiSanPham_SanPham" FromRole="LOAISANPHAM" ToRole="SANPHAM" />
+    <NavigationProperty Name="CHITIETDONMUAs" Relationship="WebDienThoaiModel.FK_ChiTietDonMua_LoaiSanPham" FromRole="LOAISANPHAM" ToRole="CHITIETDONMUA" />
+  </EntityType>
+  <Association Name="FK_LoaiSanPham_SanPham">
+    <End Type="WebDienThoaiModel.SANPHAM" Role="SANPHAM" Multiplicity="0..1" />
+    <End Type="WebDienThoaiModel.LOAISANPHAM" Role="LOAISANPHAM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SANPHAM">
+        <PropertyRef Name="MaSP" />
+      </Principal>
+      <Dependent Role="LOAISANPHAM">
+        <PropertyRef Name="MaSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="DONMUASP">
+    <Key>
+      <PropertyRef Name="MaDonMua" />
+    </Key>
+    <Property Name="MaDonMua" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaKH" Type="Int32" />
+    <Property Name="NgayDat" Type="DateTime" Precision="0" />
+    <Property Name="TriGia" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="TenNguoiMua" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Payments" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="KHACHHANG" Relationship="WebDienThoaiModel.FK_DonMuaSP_KhachHang" FromRole="DONMUASP" ToRole="KHACHHANG" />
+    <NavigationProperty Name="CHITIETDONMUAs" Relationship="WebDienThoaiModel.FK_ChiTietDonMua_DonMuaSP" FromRole="DONMUASP" ToRole="CHITIETDONMUA" />
+  </EntityType>
+  <Association Name="FK_DonMuaSP_KhachHang">
+    <End Type="WebDienThoaiModel.KHACHHANG" Role="KHACHHANG" Multiplicity="0..1" />
+    <End Type="WebDienThoaiModel.DONMUASP" Role="DONMUASP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHACHHANG">
+        <PropertyRef Name="MaKH" />
+      </Principal>
+      <Dependent Role="DONMUASP">
+        <PropertyRef Name="MaKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="CHITIETDONMUA">
+    <Key>
+      <PropertyRef Name="MaDonMua" />
+      <PropertyRef Name="MaLSP" />
+    </Key>
+    <Property Name="MaDonMua" Type="Int32" Nullable="false" />
+    <Property Name="MaLSP" Type="Int32" Nullable="false" />
+    <Property Name="HinhMinhHoa" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SoLuong" Type="Int32" />
+    <Property Name="DonGia" Type="Decimal" Precision="9" Scale="3" />
+    <Property Name="AnhMinhHoa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MauSac" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NgayDat" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="DONMUASP" Relationship="WebDienThoaiModel.FK_ChiTietDonMua_DonMuaSP" FromRole="CHITIETDONMUA" ToRole="DONMUASP" />
+    <NavigationProperty Name="LOAISANPHAM" Relationship="WebDienThoaiModel.FK_ChiTietDonMua_LoaiSanPham" FromRole="CHITIETDONMUA" ToRole="LOAISANPHAM" />
+  </EntityType>
+  <Association Name="FK_ChiTietDonMua_DonMuaSP">
+    <End Type="WebDienThoaiModel.DONMUASP" Role="DONMUASP" Multiplicity="1" />
+    <End Type="WebDienThoaiModel.CHITIETDONMUA" Role="CHITIETDONMUA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DONMUASP">
+        <PropertyRef Name="MaDonMua" />
+      </Principal>
+      <Dependent Role="CHITIETDONMUA">
+        <PropertyRef Name="MaDonMua" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ChiTietDonMua_LoaiSanPham">
+    <End Type="WebDienThoaiModel.LOAISANPHAM" Role="LOAISANPHAM" Multiplicity="1" />
+    <End Type="WebDienThoaiModel.CHITIETDONMUA" Role="CHITIETDONMUA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOAISANPHAM">
+        <PropertyRef Name="MaLSP" />
+      </Principal>
+      <Dependent Role="CHITIETDONMUA">
+        <PropertyRef Name="MaLSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="FEEDBACK">
+    <Key>
+      <PropertyRef Name="MaFB" />
+    </Key>
+    <Property Name="MaFB" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ChuDeFB" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ThongtinFB" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MaSP" Type="Int32" />
+    <Property Name="Ngaydanhgia" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TenKH" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TenSP" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SANPHAM" Relationship="WebDienThoaiModel.FK_FEEDBACK_SanPham" FromRole="FEEDBACK" ToRole="SANPHAM" />
+  </EntityType>
+  <Association Name="FK_FEEDBACK_SanPham">
+    <End Type="WebDienThoaiModel.SANPHAM" Role="SANPHAM" Multiplicity="0..1" />
+    <End Type="WebDienThoaiModel.FEEDBACK" Role="FEEDBACK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SANPHAM">
+        <PropertyRef Name="MaSP" />
+      </Principal>
+      <Dependent Role="FEEDBACK">
+        <PropertyRef Name="MaSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
